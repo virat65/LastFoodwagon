@@ -1,0 +1,24 @@
+const backendUrl = "http://localhost:1234";
+const API = {
+  signup: {
+    method: "post",
+    url: `${backendUrl}/user/signup`,
+  },
+  login: {
+    url: `${backendUrl}/user/login`,
+    method: "post",
+  },
+    findAll: {
+    url: `${backendUrl}/user/findAll`,
+    method: "get",
+  },
+  finduserbyid :{
+    url:`${backendUrl}/user/findbyid`,
+    method:"post"
+  },
+  deleteuser :{
+    url:`${backendUrl}/user/delete`,
+    method:"delete"
+  }
+};
+export default API;

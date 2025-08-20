@@ -1,0 +1,43 @@
+.eleven{
+  background-color: #212121;
+  color: white;
+}
+.upperPart .list {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;  background-color: #212121;
+  /* justify-content: space-between; */
+  gap: 250px;
+  /* padding: 30px; */
+  color: white;
+
+}
+.upperPart {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+   background-color:#212121;
+  justify-content: left;
+  /* justify-content: space-between; */
+  padding: 30px;
+  color: white;
+
+}
+.upperPart ul li {
+  justify-content: left;
+  margin-left: -16px;
+  /* padding-right: 20px; */
+  list-style-type: none;
+}
+
+.head{
+  padding: 20px;
+  /* justify-content: left; */
+  display: flex;
+ gap: 200px;
+  /* justify-content: space-between; */
+}
+
+.margin{
+  margin-left: 70px;
+}

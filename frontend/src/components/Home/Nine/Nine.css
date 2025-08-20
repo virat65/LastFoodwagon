@@ -1,0 +1,6 @@
+
+
+.customCard img {
+  height: 400px; /* Ensure the image fills its column */
+  object-fit: cover;
+}

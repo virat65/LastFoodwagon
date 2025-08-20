@@ -1,0 +1,78 @@
+.cardsss {
+  flex-wrap: wrap;
+
+  color: orangered;
+  background-color: rgb(252, 234, 222);
+  height: 30px;
+  width: 55%;
+  padding: 0px 4px;
+  /* gap: 300px; */
+  /* border: 4px solid violet; */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: 700;
+  border-radius: 5px;
+}
+
+.svgSize{
+  color: rgb(228, 186, 15);
+  width: 20px;
+
+}
+
+.tags{
+  display: flex;
+  flex-direction: row;
+}
+.btnnn{
+  display: flex;
+
+}
+.star{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* gap: 2px; */
+}
+.star h6{
+  font-weight: 700;
+}
+.radius{
+  border-radius: 15px;
+}
+.cardtext{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.cardForming{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* background-color: aqua; */
+  align-items: center;
+  text-align: center;
+  gap: 50px;
+
+}
+
+.center{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.detail{
+  gap: 5px;
+  display: flex;
+
+  /* background-color: aqua; */
+}
+
+.gaps{
+  display: flex;
+/* background-color: aquamarine; */
+gap: "80px";
+}

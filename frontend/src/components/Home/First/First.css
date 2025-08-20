@@ -1,0 +1,58 @@
+.home-first{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /* align-items: start; */
+  margin: 20px 0px;
+  width: 100%;
+  padding: 20px 20px;
+  background-color: #FFB30E;
+  width: 100vw;
+  margin-top: 60px;
+
+
+}
+
+
+.card-design .lower{
+  margin: 30px;
+}
+.card-form{
+  display: flex;
+  justify-content: space-around;
+  flex-direction:row;
+  /* background-color: aqua; */
+}
+.home-right img{
+height: 400px;
+object-fit: contain;
+background-repeat: no-repeat;
+background-size: contain;
+width: 500px;
+}
+
+.home-left{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+}
+
+.home-left .text{
+  display: flex;
+  width: 60%;
+  justify-content: center;
+  flex-direction:column ;
+}
+
+.home-left .text h1{
+   color: white;
+   font-weight: 800;
+
+   font-size: 3rem;
+}
+
+.buton{
+  border-radius: 5px;
+  /* width: 200px; */
+}

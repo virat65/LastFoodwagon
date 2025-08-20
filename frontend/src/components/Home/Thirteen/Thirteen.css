@@ -1,0 +1,22 @@
+.foot{
+  justify-content: space-between;
+
+}
+
+.thirteen{
+
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
+  background-color:#212121;
+  width: 100%;
+  color: white;
+  padding: 0px 30px;
+
+}
+
+.icons{
+
+  flex-direction: row;
+  gap: 15px;
+}
