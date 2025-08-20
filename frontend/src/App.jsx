@@ -2,7 +2,7 @@
 import "./App.css";
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Login from "./components/login/login.jsx";
+import Login from "./components/login/Login.jsx";
 import Signup from "./components/singup/singup.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import First from "./components/Home/First/First.jsx";
@@ -22,7 +22,7 @@ import Twelve from "./components/Home/Twelve/Twelve.jsx";
 import { ToastContainer } from "react-toastify";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import UserTable from "./components/Home/userTable/userTable.jsx";
+import UserTable from "./components/Home/userTable/UserTable.jsx";
 import Userview from "./components/userview/userview.jsx";
 import UserDelete from "./components/userDelete/UserDelete.jsx";
 
@@ -55,8 +55,8 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/usertable" element={<UserTable />} />
-           <Route path="/userview/:id" element={<Userview/>} />
-              <Route path="/userdelete/:id" element={<UserDelete/>} />
+          <Route path="/userview/:id" element={<Userview />} />
+          <Route path="/userdelete/:id" element={<UserDelete />} />
           {/* <First></First>
             <Second></Second>
             <Third></Third>
