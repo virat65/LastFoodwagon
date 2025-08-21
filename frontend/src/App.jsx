@@ -2,7 +2,7 @@
 import "./App.css";
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Login from "./components/login/Login.jsx";
+import Login from "./components/login/login.jsx";
 import Signup from "./components/singup/singup.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import First from "./components/Home/First/First.jsx";
@@ -23,7 +23,7 @@ import { ToastContainer } from "react-toastify";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import UserTable from "./components/Home/userTable/UserTable.jsx";
-import Userview from "./components/userview/userview.jsx";
+import Userview from "./components/userview/Userview.jsx";
 import UserDelete from "./components/userDelete/UserDelete.jsx";
 
 const App = () => {
