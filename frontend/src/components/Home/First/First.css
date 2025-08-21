@@ -40,7 +40,8 @@
 
 /* Button */
 .buton {
-  height: 40px;
+   width: auto;
+   height: 40px;
   background-color: rgb(242, 114, 41);
   color: white;
   border-radius: 5px;
@@ -51,7 +52,7 @@
 
 /* Image responsiveness */
 .home-right img {
-  max-width: 30vw;
+  width: 30vw;
   height: auto;
   object-fit: contain;
 }
