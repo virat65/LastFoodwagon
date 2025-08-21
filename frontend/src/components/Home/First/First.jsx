@@ -20,68 +20,41 @@ const First = () => {
           <h3>Within a few clicks, find meals that are accessible near you</h3>
         </div>
 
-        <div className="card card-design" style={{ width: "30rem" }}>
-          <div className="card-body">
-            <div className="upper">
-              <a
-                href="#"
-                style={{ backgroundColor: "rgb(253,233,222)" }}
-                className="btn  mx-4"
-              >
-                <i
-                  className="fa-solid fa-motorcycle me-2 "
-                  style={{ color: "rgb(242,114,41)" }}
-                ></i>
-                Delivery
-              </a>
-              <a href="#" className="btn ">
-                {" "}
-                <i className="fa-solid fa-bag-shopping me-2"></i>
-                pickup
-              </a>
-            </div>
-            <div className="lower">
-              <p
-                className="card-text card-form me-3"
-                style={{ position: "relative", width: "300px" }}
-              >
-                <i
-                  className=" fa-solid fa-location-dot"
-                  style={{
-                    position: "absolute",
-                    top: "50%",
-                    left: "10px",
-                    transform: "translateY(-50%)",
-                    // color: "gray",
-                  }}
-                ></i>
-                <input
-                  type="text"
-                  placeholder="Enter Your Address"
-                  name=""
-                  id="text"
-                  style={{
-                    width: "250px",
-                    height: "40px",
-                    paddingLeft: "25px",
-                  }}
-                />
-                <a href="#">
-                  <button
-                    className="buton ms-1"
-                    style={{
-                      height: "40px",
-                      width: "100px",
-                      backgroundColor: "rgb(242,114,41)",
-                    }}
-                  >
-                    Find Food
-                  </button>
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
+       <div className="card card-design">
+  <div className="card-body">
+    <div className="upper">
+      <a
+        href="#"
+        style={{ backgroundColor: "rgb(253,233,222)" }}
+        className="btn mx-2"
+      >
+        <i
+          className="fa-solid fa-motorcycle me-2"
+          style={{ color: "rgb(242,114,41)" }}
+        ></i>
+        Delivery
+      </a>
+      <a href="#" className="btn">
+        <i className="fa-solid fa-bag-shopping me-2"></i>
+        Pickup
+      </a>
+    </div>
+
+    <div className="lower">
+      <div className="card-form">
+        <i className="fa-solid fa-location-dot location-icon"></i>
+        <input
+          type="text"
+          placeholder="Enter Your Address"
+          id="text"
+          className="form-control address-input"
+        />
+        <button className="buton">Find Food</button>
+      </div>
+    </div>
+  </div>
+</div>
+
       </div>
 
       <div className="home-right col d-flex justify-content-center align-items-center">
