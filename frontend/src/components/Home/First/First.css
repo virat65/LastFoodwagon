@@ -1,58 +1,102 @@
-.home-first{
+.home-first {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  /* align-items: start; */
-  margin: 20px 0px;
-  width: 100%;
-  padding: 20px 20px;
-  background-color: #FFB30E;
-  width: 100vw;
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #ffb30e;
   margin-top: 60px;
-
-
+  width: 100%;
 }
 
-
-.card-design .lower{
-  margin: 30px;
+/* Card */
+.card-design {
+  max-width: 100%;
+  width: 100%;
 }
-.card-form{
+
+.card-design .lower {
+  margin: 20px;
+}
+
+.card-form {
   display: flex;
-  justify-content: space-around;
-  flex-direction:row;
-  /* background-color: aqua; */
-}
-.home-right img{
-height: 400px;
-object-fit: contain;
-background-repeat: no-repeat;
-background-size: contain;
-width: 500px;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-.home-left{
+.card-form .location-icon {
+  color: gray;
+}
+
+/* Input */
+.address-input {
+  flex: 1;
+  min-width: 180px;
+  padding-left: 30px;
+  height: 40px;
+}
+
+/* Button */
+.buton {
+  height: 40px;
+  background-color: rgb(242, 114, 41);
+  color: white;
+  border-radius: 5px;
+  border: none;
+  padding: 0 15px;
+  flex-shrink: 0;
+}
+
+/* Image responsiveness */
+.home-right img {
+  max-width: 30vw;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Left text */
+.home-left {
   display: flex;
   flex-direction: column;
   gap: 20px;
   justify-content: center;
 }
 
-.home-left .text{
-  display: flex;
-  width: 60%;
-  justify-content: center;
-  flex-direction:column ;
+.home-left .text {
+  width: 100%;
 }
 
-.home-left .text h1{
-   color: white;
-   font-weight: 800;
-
-   font-size: 3rem;
+.home-left .text h1 {
+  color: white;
+  font-weight: 800;
+  font-size: 2.5rem;
 }
 
-.buton{
-  border-radius: 5px;
-  /* width: 200px; */
+/* ✅ Media Queries */
+@media (max-width: 992px) {
+  .home-left .text h1 {
+    font-size: 2rem;
+  }
+
+  .card-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .buton {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .home-left .text h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  .home-left .text h3 {
+    font-size: 1rem;
+    text-align: center;
+  }
 }
