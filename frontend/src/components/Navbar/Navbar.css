@@ -2,6 +2,10 @@
  background: linear-gradient(50deg, #fb3c00, #ffb800);
  -webkit-background-clip: text;
  -webkit-text-fill-color: transparent;
+ margin:0 40px 0 0;
+ font-weight: 900;
+ font-size: 1.4rem;
+ /* border: 2px solid black; */
 }
 
 .gap{
@@ -29,9 +33,12 @@ margin: 0;
 
 
 }
-
+button{
+  width: auto !important;
+}
 .colour{
   color:  #ffb800;
+  width: auto;
 }
 .nav-second{
   display: flex;
@@ -45,4 +52,45 @@ margin: 0;
   font-weight: 700;
   font-style: underline;
   text-decoration: underline;
+}
+.navbar-brand img{
+    object-fit: cover;
+    /* border: 2px solid black; */
+    height: auto;
+    width: 3vw;
+    border-radius: 0;
+padding: 2px;
+}
+
+@media (max-width:620px) {
+.navbar-brand{
+  width: 100vw;
+    /* border: 2px solid black; */
+    display: flex;
+    height: 40px;
+    justify-content: space-between;
+
+} .navbar-brand img{
+  height: auto;
+  width: 40px;
+  /* padding: 5px; */
+  /* border: 2px solid black; */
+  object-fit: contain;
+}
+.nav-third{
+  width: 100vw;
+  display: flex !important;
+  margin-top: 10px
+  ;
+  margin-right: 0;
+  height: 40px;
+  justify-content: space-between;
+}
+form{
+  width: 90vw; display: flex !important; justify-content: space-between;
+} form input{
+  width: 40vw !important;
+  min-width: 100px;
+  border: 2px solid red;
+}
 }

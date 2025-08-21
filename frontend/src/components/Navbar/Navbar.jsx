@@ -30,17 +30,7 @@ const Navbar = () => {
               <span className=" ms-3 logotext">Foodwagon</span>
             </a>
 
-            <button
-              className="navbar-toggler "
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
+
           </div>
           <div className="nav-second ">
             <div className="welcomeMessage d-none d-md-block  ">
@@ -55,7 +45,7 @@ const Navbar = () => {
               <p>
                 Deliver to :{" "}
                 <span>
-                  <i className="fa-solid fa-location-dot mx-1 colour"></i>
+                  <i className="fa-solid fa-location-dot mx-1 colour w-auto" ></i>
                 </span>
                 <span className="ms-2">Current Location </span>
                 <span>Mirpur 1 Bus Stand, Dhaka</span>
@@ -63,22 +53,22 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="nav-third me-5">
-            <form className="d-flex">
+          <div className="nav-third me-lg-5 d-flex justify-content-between ">
+            <form className="d-flex ">
               <input
                 className="form-control me-2"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
               />
-            </form>
+
             {availableCookie ? (
               <button
                 className="btn btn-outline-success colour"
-                href="#"
+                href="#" type="button"
                 onClick={() => setSidebarOpen(true)}
               >
-                profile
+                Profile
               </button>
             ) : (
               <Link aria-current="page" to={"/login"}>
@@ -90,7 +80,7 @@ const Navbar = () => {
                   Login
                 </button>
               </Link>
-            )}
+            )} </form>
           </div>
         </div>
       </nav>

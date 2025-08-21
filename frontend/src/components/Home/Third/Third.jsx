@@ -7,8 +7,8 @@ const Third = () => {
       <div className="container">
         <h2>How does it work </h2>
         <div className="card">
-          <div className="row">
-            <div className="col-sm-6 col-md-3 mb-6 card-design">
+          <div className="row show-cards ">
+            <div className="col-12 col-lg-6 mb-6 card-design w-50 mb-2">
               <div className="text-center">
                 <img
                   className="shadow-icon"
@@ -22,7 +22,7 @@ const Third = () => {
                 </p>
               </div>
             </div>
-            <div className="col-sm-6 col-md-3 mb-6 card-design">
+            <div className="col-12 col-lg-6 mb-6 card-design w-50 mb-2">
               <div className="text-center">
                 <img
                   className="shadow-icon"
@@ -36,7 +36,7 @@ const Third = () => {
                 </p>
               </div>
             </div>
-            <div className="col-sm-6 col-md-3 mb-6">
+            <div className="col-12 col-lg-6 mb-6 card-design w-50 mt-2">
               <div className="text-center">
                 <img
                   className="shadow-icon"
@@ -51,10 +51,10 @@ const Third = () => {
                 </p>
               </div>
             </div>
-            <div className="col-sm-6 col-md-3 mb-6">
+            <div className="col-12 col-lg-6 mb-6 card-design w-50 mt-2">
               <div className="text-center">
                 <img
-                  className="shadow-icon"
+                  className="shadow-icon img-fluid"
                   src={images.meals}
                   height="112"
                   alt="..."

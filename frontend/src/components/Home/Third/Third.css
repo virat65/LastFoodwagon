@@ -15,8 +15,26 @@
   padding: 20px 0px ;
 }
 .text{
-  width: 80%;
+  width: 100%;
   /* background-color: aqua; */
   justify-content: center;
   text-align: center;
+}
+
+.card-design img{
+  border-radius: 0px !important
+  ;
+  width: auto;
+  height: 90px;
+  /* border: 2px solid black */
+  ;
+  object-fit: contain !important;
+}
+@media (max-width:500px) {
+  .card-design{
+    width: 100vw !important
+    ;
+    /* border: 2px solid black; */
+  }
+
 }
