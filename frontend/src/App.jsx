@@ -28,6 +28,7 @@ import UserDelete from "./components/userDelete/UserDelete.jsx";
 import Addproduct from "./components/Product/Addprodut/Addproduct.jsx";
 
 import AllProducts from "./components/Product/allProduct/AllProduct.jsx";
+import Singup from "./components/singup/Singup.jsx";
 
 const App = () => {
   return (
@@ -56,12 +57,12 @@ const App = () => {
             }
           />
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/signup" element={<Singup/>} />
           <Route path="/usertable" element={<UserTable />} />
           <Route path="/userview/:id" element={<Userview />} />
           <Route path="/userdelete/:id" element={<UserDelete />} />
           <Route path="/addProduct" element={<Addproduct/>}/>
-          <Route path="/AllProducts" element={<AllProducts/>}/>
+          <Route path="/AllProducts" element={<AllProducts/>}/>  
           {/* <First></First>
             <Second></Second>
             <Third></Third>

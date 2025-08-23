@@ -4,6 +4,8 @@ import productModel from "../ProductModel/ProductSchme.js";
 
 export const newProduct = async (req, res) => {
   try {
+    const productname = req.body.name
+    console.log(productname,"productname")
     const findProduct = await productModel.findOne({ name: req?.body?.name });
 
     if (findProduct) {
