@@ -20,14 +20,13 @@ const Login = () => {
       console.log(formdata, "DAta");
       if (formdata.data.status === 200) {
         toast.success(formdata.data.message);
-        console.log("first",formdata.data.message)
-        console.log(" logini sucess")
+        console.log("first", formdata.data.message);
+        console.log(" logini sucess");
         // localStorage.setItem("userToken", JSON.stringify(formdata.data.body));
         // sessionStorage.setItem("userToken", JSON.stringify(formdata.data.body));
         cookie.set("userInfo", JSON.stringify(formdata.data.body));
         navigate("/");
         setTimeout(() => {
-
           window.location.reload();
         }, 1000);
       } else {
@@ -39,43 +38,49 @@ const Login = () => {
     }
   };
   return (
-    <div className="login-container  container mt-5 d-flex justify-content-center align-items-center">
-      <div className="login-card p-4 shadow">
-        <h2 className="text-center mb-4">Login</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-3">
-            <label htmlFor="email" className="form-label">
-              Email or phoneNumber
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              value={data.email}
-              name="email"
-              placeholder=" email OR phoneNumber"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="password" className="form-label">
-              Password
-            </label>
-            <input
-              onChange={handleChange}
-              type="password"
-              name="password"
-              className="form-control"
-              value={data.password}
-              placeholder="Enter your password"
-            />
-          </div>
-          <button type="submit" className="btn btn-primary w-100">
-            Login
-          </button>
-        </form>
-        <p className="text-center mt-3">
-          Don't have an account? <a href="/sign">Sing UP</a>
-        </p>
+    <div className="container">
+      <div className="row w-100">
+        <div className="col-12 col-sm-10 col-md-6 col-lg-4 mx-auto">
+          <div className="login-container  container mt-5 d-flex justify-content-center align-items-center ">
+            <div className="login-card p-4 shadow ">
+              <h2 className="text-center mb-4">Login</h2>
+              <form onSubmit={handleSubmit}>
+                <div className="mb-3">
+                  <label htmlFor="email" className="form-label">
+                    Email or phoneNumber
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    value={data.email}
+                    name="email"
+                    placeholder=" email OR phoneNumber"
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="password" className="form-label">
+                    Password
+                  </label>
+                  <input
+                    onChange={handleChange}
+                    type="password"
+                    name="password"
+                    className="form-control"
+                    value={data.password}
+                    placeholder="Enter your password"
+                  />
+                </div>
+                <button type="submit" className="btn btn-primary w-100">
+                  Login
+                </button>
+              </form>
+              <p className="text-center mt-3">
+                Don't have an account? <a href="/sign">Sing UP</a>
+              </p>
+            </div>{" "}
+          </div>{" "}
+        </div>
       </div>
     </div>
   );

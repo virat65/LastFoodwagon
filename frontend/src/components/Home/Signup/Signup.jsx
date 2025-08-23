@@ -64,7 +64,9 @@ const Singup = () => {
     }
   };
   return (
-    <div>
+  <div className="container">
+      <div className="row w-100">
+        <div className="col-12 col-sm-10 col-md-6 col-lg-4 mx-auto">
       <div className="login-container container mt-5 d-flex justify-content-center align-items-center">
         <div className="login-card p-4 shadow">
           <h2 className="text-center mb-4">Singup</h2>
@@ -157,7 +159,9 @@ const Singup = () => {
           </p>
         </div>
       </div>
-    </div>
+    </div>  </div>
+      </div>
+    
   );
 };
 
