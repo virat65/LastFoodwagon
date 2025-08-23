@@ -13,17 +13,26 @@ const AddProduct = () => {
   });
 
   // Handle input changes
+  // const handleChange = (e) => {
+  //   console.log(e.target, "Eee");
+  //   if (e.target.name === "image") {
+  //     setProductData({
+  //       [e.target.name]: e.target.files[0],
+  //     });
+  //   } else {
+  //     setProductData({
+  //       ...productData,
+  //       [e.target.name]: e.target.value,
+  //     });
+  //   }
+  // };
   const handleChange = (e) => {
-    console.log(e.target, "Eee");
-    if (e.target.name === "image") {
-      setProductData({
-        [e.target.name]: e.target.files[0],
-      });
+    const { name, value, files } = e.target;
+    console.log(files, "files");
+    if (name === "image") {
+      setProductData({ ...productData, [name]: files[0] });
     } else {
-      setProductData({
-        ...productData,
-        [e.target.name]: e.target.value,
-      });
+      setProductData({ ...productData, [name]: value });
     }
   };
 
@@ -40,7 +49,7 @@ const AddProduct = () => {
       const product = await axios.post(
         productRouting.addProduct.url,
         allProductForm
-      );
+      );   
       console.log(product, "productssss");
       console.log("Product Added:", productData);
       // toast.success("Product added successfully!");
@@ -134,7 +143,8 @@ const AddProduct = () => {
               type="file"
               className="form-control"
               name="image"
-             placeholder="insert pic"   onChange={handleChange}
+              placeholder="insert pic"
+              onChange={handleChange}
             />
           </div>
         </div>
