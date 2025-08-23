@@ -74,7 +74,7 @@ const Login = () => {
           </button>
         </form>
         <p className="text-center mt-3">
-          Don't have an account? <a href="/Signup">Sing UP</a>
+          Don't have an account? <a href="/sign">Sing UP</a>
         </p>
       </div>
     </div>

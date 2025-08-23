@@ -57,7 +57,7 @@ const App = () => {
             }
           />
           <Route path="/login" element={<Login />} />
-          <Route path="/Signup" element={<Singup/>} />
+          <Route path="/sign" element={<Singup/>} />
           <Route path="/usertable" element={<UserTable />} />
           <Route path="/userview/:id" element={<Userview />} />
           <Route path="/userdelete/:id" element={<UserDelete />} />
