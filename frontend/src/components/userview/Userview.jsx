@@ -15,13 +15,14 @@ const Userview = () => {
       // Add pic property to userInfo if image exists
       const user = userInfo.data.body;
       if (user && user.image) {
-        user.pic = `http://localhost:1234/images/${user.image}`;
+        // user.pic = `http://localhost:1234/images/${user.image}`;
+         user.pic = `${import.meta.env.VITE_BACKENDURL}/images/${user.image}`;
       }
       setInfo(user);
     } catch (error) {
       console.log("error in userview", error);
     }
-  };
+  }; 
   useEffect(()=>{
 getData()
   },[id])

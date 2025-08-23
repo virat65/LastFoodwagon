@@ -42,7 +42,8 @@ export const AllProducts = async (req, res) => {
     const allproucts = products.map((e) => {
       return {
         ...e.toObject(),
-        picture: `http://localhost:1234/productImages/${e.image}`,
+        // picture: `http://localhost:1234/productImages/${e.image}`,
+        picture: `${process.env.baseurl}/productImages/${e.image}`,
       };
     });
     return res.json({

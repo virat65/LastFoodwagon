@@ -135,7 +135,8 @@ export const findAll = async (req, res) => {
     const allusers = users.map((e) => {
       return {
         ...e.toObject(),
-        pic: `http://localhost:1234/images/${e.image}`,
+        // pic: `http://localhost:1234/images/${e.image}`,
+        pic: `${process.env.baseurl}/images/${e.image}`,
       };
     });
     return res.json({ body: allusers });
