@@ -27,7 +27,7 @@ import Userview from "./components/userview/Userview.jsx";
 import UserDelete from "./components/userDelete/UserDelete.jsx";
 import Addproduct from "./components/Product/Addprodut/Addproduct.jsx";
 
-import AllProducts from "./components/Product/allProduct/allProduct.jsx";
+import AllProducts from "./components/Product/allProduct/AllProduct.jsx";
 
 const App = () => {
   return (
