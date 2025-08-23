@@ -64,10 +64,10 @@ const Singup = () => {
     }
   };
   return (
-  <div className="container">
+  <div className="container container-fluid d-flex justify-content-center align-items-center min-vh-100">
       <div className="row w-100">
         <div className="col-12 col-sm-10 col-md-6 col-lg-4 mx-auto">
-      <div className="login-container container mt-5 d-flex justify-content-center align-items-center">
+      <div className="login-container container mt-5 d-flex justify-content-center align-items-center  col-12 col-sm-10 col-md-6 col-lg-4 mx-auto">
         <div className="login-card p-4 shadow">
           <h2 className="text-center mb-4">Singup</h2>
           <form onSubmit={handleSubmit}>
@@ -161,7 +161,7 @@ const Singup = () => {
       </div>
     </div>  </div>
       </div>
-    
+
   );
 };
 

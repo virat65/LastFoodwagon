@@ -38,7 +38,7 @@ const Login = () => {
     }
   };
   return (
-    <div className="container">
+    <div className="container-fluid d-flex justify-content-center align-items-center min-vh-100">
       <div className="row w-100">
         <div className="col-12 col-sm-10 col-md-6 col-lg-4 mx-auto">
           <div className="login-container  container mt-5 d-flex justify-content-center align-items-center ">
