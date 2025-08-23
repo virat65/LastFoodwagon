@@ -2,7 +2,7 @@ const backendUrl =import.meta.env.VITE_BACKENDURL;
 const API = {
   signup: {
     method: "post",
-    url: `${backendUrl}/user/signup`,
+    url: `${backendUrl}/user/Signup`,
   },
   login: {
     url: `${backendUrl}/user/login`,

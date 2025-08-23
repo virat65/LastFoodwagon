@@ -53,7 +53,7 @@ const Singup = () => {
           navigate("/login");
         } else {
           toast.error(formData.data.message);
-        }
+        } 
       } catch (error) {
         console.log(error);
         toast.error(error);

@@ -3,7 +3,7 @@ import "./App.css";
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Login from "./components/login/login.jsx";
-import Signup from "./components/singup/Singup.jsx";
+// import Signup from "./components/singup/Singup.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import First from "./components/Home/First/First.jsx";
 import Second from "./components/Home/Second/Second.jsx";
@@ -57,12 +57,12 @@ const App = () => {
             }
           />
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Singup/>} />
+          <Route path="/Signup" element={<Singup/>} />
           <Route path="/usertable" element={<UserTable />} />
           <Route path="/userview/:id" element={<Userview />} />
           <Route path="/userdelete/:id" element={<UserDelete />} />
           <Route path="/addProduct" element={<Addproduct/>}/>
-          <Route path="/AllProducts" element={<AllProducts/>}/>  
+          <Route path="/AllProducts" element={<AllProducts/>}/>
           {/* <First></First>
             <Second></Second>
             <Third></Third>
