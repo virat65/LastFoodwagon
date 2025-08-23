@@ -25,12 +25,14 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid gap">
           <div className="nav-first">
-            <a className="navbar-brand ms-3" href="#" onClick={()=>navigate("/")}>
+            <a
+              className="navbar-brand ms-3"
+              href="#"
+              onClick={() => navigate("/")}
+            >
               <img src={logo} alt="" className="img-fluid" />
               <span className=" ms-3 logotext">Foodwagon</span>
             </a>
-
-
           </div>
           <div className="nav-second ">
             <div className="welcomeMessage d-none d-md-block  ">
@@ -45,7 +47,7 @@ const Navbar = () => {
               <p>
                 Deliver to :{" "}
                 <span>
-                  <i className="fa-solid fa-location-dot mx-1 colour w-auto" ></i>
+                  <i className="fa-solid fa-location-dot mx-1 colour w-auto"></i>
                 </span>
                 <span className="ms-2">Current Location </span>
                 <span>Mirpur 1 Bus Stand, Dhaka</span>
@@ -61,26 +63,27 @@ const Navbar = () => {
                 placeholder="Search"
                 aria-label="Search"
               />
-
-            {availableCookie ? (
-              <button
-                className="btn btn-outline-success colour"
-                href="#" type="button"
-                onClick={() => setSidebarOpen(true)}
-              >
-                Profile
-              </button>
-            ) : (
-              <Link aria-current="page" to={"/login"}>
+              {availableCookie ? (
                 <button
-                  className="btn btn-outline-success colour w-100"
-                  href=""
-                  type=""
+                  className="btn btn-outline-success colour"
+                  href="#"
+                  type="button"
+                  onClick={() => setSidebarOpen(true)}
                 >
-                  Login
+                  Profile
                 </button>
-              </Link>
-            )} </form>
+              ) : (
+                <Link aria-current="page" to={"/login"}>
+                  <button
+                    className="btn btn-outline-success colour w-100"
+                    href=""
+                    type=""
+                  >
+                    Login
+                  </button>
+                </Link>
+              )}{" "}
+            </form>
           </div>
         </div>
       </nav>
@@ -95,15 +98,45 @@ const Navbar = () => {
               <strong>Email:</strong> {availableCookie?.email}
             </p>
 
-            <button
-              className="btn btn-primary w-100 my-2"
-              onClick={() => {
-                navigate("/usertable");
-                setSidebarOpen(false);
-              }}
-            >
-              All Users Details
-            </button>
+            {console.log(availableCookie, "cooo")}
+
+            {availableCookie?.userType === "Admin" && (
+              <>
+                <button
+                  className="btn btn-primary w-100 my-2"
+                  onClick={() => {
+                    navigate("/usertable");
+                    setSidebarOpen(false);
+                  }}
+                >
+                  All Users Details
+                </button>{" "}
+                {/* <button
+                  className="btn btn-success w-100 my-2"
+                  onClick={() => {
+                    navigate("/dashboard");
+                    setSidebarOpen(false);
+                  }}
+                >
+                  Dashboard{" "}
+                </button>{" "} */}
+                <button
+                  className="btn btn-warning w-100 my-2"
+                  onClick={() => {navigate("/addproduct")
+                     setSidebarOpen(false);
+                  }}
+                >
+                  AddPrdouct{" "}
+                </button> <button
+                  className="btn btn-success w-100 my-2"
+                  onClick={() => {navigate("/allProducts")
+                     setSidebarOpen(false);
+                  }}
+                >
+                  AllProducts{" "}
+                </button>
+              </>
+            )}
             <button
               className="btn btn-danger w-100 my-2"
               onClick={() => {
@@ -113,6 +146,7 @@ const Navbar = () => {
             >
               Logout
             </button>
+
             <button
               className="btn btn-secondary w-100 my-2"
               onClick={() => setSidebarOpen(false)}

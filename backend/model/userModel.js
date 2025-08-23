@@ -8,6 +8,7 @@ const schema = mongoose.Schema(
     image: { type: String, default: "" },
     phone: { type: String, default: "" },
     token: { type: String, default: "" },
+    userType: { type: String,default:["user","Admin"] },
   },
   { timestamps: true }
 );

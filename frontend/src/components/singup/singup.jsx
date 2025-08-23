@@ -11,6 +11,8 @@ const Singup = () => {
     email: "",
     password: "",
     image: "",
+    userType: "",
+    secreatekey: "",
   });
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -23,24 +25,39 @@ const Singup = () => {
   };
 
   const handleSubmit = async (e) => {
-    try {
-      e.preventDefault();
-      const dataaaa = new FormData();
-      dataaaa.append("name", data.name);
-      dataaaa.append("email", data.email);
-      dataaaa.append("password", data.password);
-      dataaaa.append("image", data.image);
-      const formData = await axios.post(API.signup.url, dataaaa);
-      console.log(formData, "formData");
-      if (formData.data.status == 200) {
-        toast.success(formData.data.message);
-        navigate("/login");
-      } else {
-        toast.error(formData.data.message);
+    e.preventDefault();
+    if (data?.userType === "Admin" && data.secreatekey != import.meta.env.VITE_adminkey) {
+      toast.error("Invalid Amin");
+    } else {
+      try {
+        const dataaaa = new FormData();
+        dataaaa.append("userType", data.userType);
+        if (data.userType === "Admin") {
+          dataaaa.append("secreatekey", dataaaa.secreatekey);
+        }
+        const inputfield = data.email.trim();
+        const isPhone = /^[0-9]{10}/.test(inputfield);
+        if (isPhone) {
+          dataaaa.append("phone", inputfield);
+        } else {
+          dataaaa.append("email", data.email);
+        }
+        dataaaa.append("name", data.name);
+
+        dataaaa.append("password", data.password);
+        dataaaa.append("image", data.image);
+        const formData = await axios.post(API.signup.url, dataaaa);
+        console.log(formData, "formData");
+        if (formData.data.status == 200) {
+          toast.success(formData.data.message);
+          navigate("/login");
+        } else {
+          toast.error(formData.data.message);
+        }
+      } catch (error) {
+        console.log(error);
+        toast.error(error);
       }
-    } catch (error) {
-      console.log(error);
-      toast.error(error);
     }
   };
   return (
@@ -72,6 +89,38 @@ const Singup = () => {
                 value={data.email}
                 placeholder="Enter your email"
               />
+            </div>{" "}
+            {data?.userType === "Admin" ? (
+              <div className="mb-3">
+                <label className="form-label">Secreate key</label>
+                <input
+                  onChange={handleChange}
+                  type="password"
+                  className="form-control"
+                  id="secreatekey"
+                  name="secreatekey"
+                  placeholder="Enter your secreate key"
+                />
+              </div>
+            ) : null}
+            <div className="mb-3">
+              <label className="form-label me-2">ID Type</label>
+              <input
+                onChange={handleChange}
+                type="radio"
+                id="userType"
+                name="userType"
+                value="user"
+              />{" "}
+              <label>user</label>
+              <input
+                onChange={handleChange}
+                type="radio"
+                id="userType"
+                name="userType"
+                value="Admin"
+              />
+              <label>ADmin</label>
             </div>
             <div className="mb-3">
               <label className="form-label">Photo</label>
@@ -84,7 +133,6 @@ const Singup = () => {
                 placeholder="insert Photo"
               />
             </div>
-
             <div className="mb-3">
               <label className="form-label">Password</label>
               <input

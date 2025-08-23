@@ -1,4 +1,4 @@
-const backendUrl = "http://localhost:1234";
+const backendUrl =import.meta.env.VITE_BACKENDURL;
 const API = {
   signup: {
     method: "post",

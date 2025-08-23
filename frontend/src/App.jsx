@@ -1,4 +1,4 @@
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -18,13 +18,16 @@ import Nine from "./components/Home/Nine/Nine.jsx";
 import Tenth from "./components/Home/Tenth/Tenth.jsx";
 import Eleven from "./components/Home/Eleven/Eleven.jsx";
 import Thirteen from "./components/Home/Thirteen/Thirteen.jsx";
-import Twelve from "./components/Home/Twelve/Twelve.jsx";
+// import Twelve from "./components/Home/Twelve/Twelve.jsx";
 import { ToastContainer } from "react-toastify";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 import UserTable from "./components/Home/userTable/UserTable.jsx";
 import Userview from "./components/userview/Userview.jsx";
 import UserDelete from "./components/userDelete/UserDelete.jsx";
+import Addproduct from "./components/Product/Addprodut/Addproduct.jsx";
+
+import AllProducts from "./components/Product/allProduct/allProduct.jsx";
 
 const App = () => {
   return (
@@ -57,6 +60,8 @@ const App = () => {
           <Route path="/usertable" element={<UserTable />} />
           <Route path="/userview/:id" element={<Userview />} />
           <Route path="/userdelete/:id" element={<UserDelete />} />
+          <Route path="/addProduct" element={<Addproduct/>}/>
+          <Route path="/AllProducts" element={<AllProducts/>}/>
           {/* <First></First>
             <Second></Second>
             <Third></Third>

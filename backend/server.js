@@ -10,12 +10,14 @@ import ProductRouter from "./Product/ProductRoutes/ProductRoutes.js"
 const app = express()
 dotenv.config()
 const port = process.env.server
+
 app.use(express.json())
 const currentpath = fileURLToPath(import.meta.url)
 console.log(currentpath,"current file path")
 const currentDir = path.dirname(currentpath)
 console.log(currentDir,"currentDireactory")
 app.use("/images",express.static(path.join(currentDir,"Public/images")))
+app.use("/productImages",express.static(path.join(currentDir,"Public/productImages")))
 app.use(fileUpload())
 app.use(cors())
 app.use("/user",userRouter)

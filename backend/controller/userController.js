@@ -1,6 +1,5 @@
 import imageUpload from "../imageUpload/imageUploading.js";
 import userModel from "../model/userModel.js";
-import userRouter from "../routes/userRouter.js";
 import tokenGen from "../tokenGen/tokenGen.js";
 import bcrypt from "bcrypt";
 imageUpload;
@@ -74,12 +73,12 @@ export const signup = async (req, res) => {
 };
 export const login = async (req, res) => {
   try {
-    console.log(req.body);
+
     const emailFind = req.body?.email?.trim();
     const phoneFind = req.body?.phone?.trim();
     const query = [];
     if (emailFind) {
-      query.push({ email: RegExp(`${emailFind}$`) });
+      query.push({ email: RegExp(`^${emailFind}$`) });
     }
     if (phoneFind) {
       query.push({ phone: phoneFind });
@@ -92,9 +91,10 @@ export const login = async (req, res) => {
         body: {},
       });
     } else {
-      console.log(query);
+      console.log(query,"query");
       const user = await userModel.findOne({ $or: query });
       console.log(user, "userrrr");
+          console.log(req.body,"reqq from login");
 
       if (!user) {
         return res.json({
