@@ -3,7 +3,7 @@ import "./App.css";
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Login from "./components/login/login.jsx";
-import Signup from "./components/singup/singup.jsx";
+import Signup from "./components/singup/Singup.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import First from "./components/Home/First/First.jsx";
 import Second from "./components/Home/Second/Second.jsx";
