@@ -21,14 +21,15 @@ import Thirteen from "./components/Home/Thirteen/Thirteen.jsx";
 // import Twelve from "./components/Home/Twelve/Twelve.jsx";
 import { ToastContainer } from "react-toastify";
 
-
 import UserTable from "./components/Home/userTable/UserTable.jsx";
 import Userview from "./components/userview/Userview.jsx";
 import UserDelete from "./components/userDelete/UserDelete.jsx";
 import Addproduct from "./components/Product/Addprodut/Addproduct.jsx";
 
 import AllProducts from "./components/Product/allProduct/AllProduct.jsx";
-import Singup from "./components/singup/Singup.jsx";
+import Singup from "./components/Home/Signup/Signup.jsx";
+
+
 
 const App = () => {
   return (
@@ -56,13 +57,13 @@ const App = () => {
               </>
             }
           />
-          <Route path="/login" element={<Login />} />
-          <Route path="/sign" element={<Singup/>} />
+          <Route path="/login" element={<Login />} /> <Route path="/sign" element={<Singup/>} />
+
           <Route path="/usertable" element={<UserTable />} />
           <Route path="/userview/:id" element={<Userview />} />
           <Route path="/userdelete/:id" element={<UserDelete />} />
-          <Route path="/addProduct" element={<Addproduct/>}/>
-          <Route path="/AllProducts" element={<AllProducts/>}/>
+          <Route path="/addProduct" element={<Addproduct />} />
+          <Route path="/AllProducts" element={<AllProducts />} />
           {/* <First></First>
             <Second></Second>
             <Third></Third>

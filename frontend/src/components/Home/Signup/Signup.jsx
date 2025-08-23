@@ -1,7 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { useState } from "react";
-import API from "../login/backendrouting";
+import API from "../../login/backendrouting";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 const Singup = () => {
@@ -26,7 +26,10 @@ const Singup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (data?.userType === "Admin" && data.secreatekey != import.meta.env.VITE_adminkey) {
+    if (
+      data?.userType === "Admin" &&
+      data.secreatekey != import.meta.env.VITE_adminkey
+    ) {
       toast.error("Invalid Amin");
     } else {
       try {
@@ -53,7 +56,7 @@ const Singup = () => {
           navigate("/login");
         } else {
           toast.error(formData.data.message);
-        } 
+        }
       } catch (error) {
         console.log(error);
         toast.error(error);
