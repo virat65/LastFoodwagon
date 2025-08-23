@@ -26,7 +26,7 @@ import Userview from "./components/userview/Userview.jsx";
 import UserDelete from "./components/userDelete/UserDelete.jsx";
 import Addproduct from "./components/Product/Addprodut/Addproduct.jsx";
 
-import AllProducts from "./components/Product/allProduct/AllProduct.jsx";
+import AllProducts from "./components/Product/allProduct/AllProducts.jsx";
 import Singup from "./components/Home/Signup/Signup.jsx";
 
 

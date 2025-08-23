@@ -72,3 +72,4 @@ export const findProductById = async (req, res) => {
     console.log(error, "Error in findProductById");
   }
 };
+
