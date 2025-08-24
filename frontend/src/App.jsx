@@ -44,11 +44,9 @@ const App = () => {
             path="/"
             element={
               <>
-                {/* <First></First>
+                <First></First>
                 <Second></Second>
-                <Third></Third> */}
-
-                {/* <Fourth></Fourth>
+                <Third></Third>  <Fourth></Fourth>
                 <Five></Five>
                 <Sixth></Sixth>
                 <Seven></Seven>
@@ -56,7 +54,7 @@ const App = () => {
                 <Nine></Nine>
                 <Tenth></Tenth>
                 <Eleven></Eleven>
-                <Thirteen></Thirteen> */}
+                <Thirteen></Thirteen>
               </>
             }
           />
