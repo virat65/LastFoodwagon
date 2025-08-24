@@ -137,6 +137,13 @@ const Navbar = () => {
                 </button>
               </>
             )}
+              <button
+              className="btn btn-danger w-100 my-2"
+              onClick={() => {
+                handleLogout();
+                navigate("/productPage");
+              }}
+            >ProductPAge</button>
             <button
               className="btn btn-danger w-100 my-2"
               onClick={() => {

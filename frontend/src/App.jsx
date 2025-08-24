@@ -31,7 +31,7 @@ import Singup from "./components/Home/Signup/Signup.jsx";
 import ViewProduct from "./components/Product/ViewProduct/ViewProduct.jsx";
 import DeleteProduct from "./components/Product/DeleteProduct/DeleteProduct.jsx";
 
-
+import PrductPage from "./components/Product/AllProductRender/PrductPage.jsx";
 
 const App = () => {
   return (
@@ -44,10 +44,11 @@ const App = () => {
             path="/"
             element={
               <>
-                <First></First>
+                {/* <First></First>
                 <Second></Second>
-                <Third></Third>
-                <Fourth></Fourth>
+                <Third></Third> */}
+
+                {/* <Fourth></Fourth>
                 <Five></Five>
                 <Sixth></Sixth>
                 <Seven></Seven>
@@ -55,7 +56,7 @@ const App = () => {
                 <Nine></Nine>
                 <Tenth></Tenth>
                 <Eleven></Eleven>
-                <Thirteen></Thirteen>
+                <Thirteen></Thirteen> */}
               </>
             }
           />
@@ -68,6 +69,7 @@ const App = () => {
           <Route path="/AllProducts" element={<AllProducts />} />
           <Route path="/productview/:id" element = {<ViewProduct/>}/>
           <Route path ="/productdelete/:id" element={<DeleteProduct/>}/>
+          <Route path="/productPage" element= {<PrductPage/>}/>
           {/* <First></First>
             <Second></Second>
             <Third></Third>
