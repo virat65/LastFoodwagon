@@ -75,7 +75,7 @@ const Navbar = () => {
               ) : (
                 <Link aria-current="page" to={"/login"}>
                   <button
-                    className="btn btn-outline-success colour w-100"
+                    className="btn btn-outline-success colour "
                     href=""
                     type=""
                   >

@@ -1,0 +1,18 @@
+@media (max-width: 620px) {
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+   .btnclass {
+    width: 40vw !important;
+    /* width: 20px; */
+    /* display: none; */
+  }
+}
+@media (min-width:621px) {
+   .btnclass {
+    width: 80vw !important;
+    /* width: 20px; */
+    /* display: none; */
+  }
+}

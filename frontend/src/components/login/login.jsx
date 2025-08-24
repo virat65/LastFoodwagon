@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import cookie from "js-cookie";
-
+import "./Login.css"
 const Login = () => {
   const navigate = useNavigate();
   const [data, setData] = useState({});
@@ -44,7 +44,7 @@ const Login = () => {
           <div className="login-container  container mt-5 d-flex justify-content-center align-items-center ">
             <div className="login-card p-4 shadow ">
               <h2 className="text-center mb-4">Login</h2>
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit} className="">
                 <div className="mb-3">
                   <label htmlFor="email" className="form-label">
                     Email or phoneNumber
@@ -71,7 +71,7 @@ const Login = () => {
                     placeholder="Enter your password"
                   />
                 </div>
-                <button type="submit" className="btn btn-primary w-100">
+                <button type="submit" className="btn btn-primary btnclass w-lg-100">
                   Login
                 </button>
               </form>

@@ -22,7 +22,7 @@ const Userview = () => {
     } catch (error) {
       console.log("error in userview", error);
     }
-  }; 
+  };
   useEffect(()=>{
 getData()
   },[id])

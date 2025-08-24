@@ -152,7 +152,7 @@ const Singup = () => {
               />
             </div>
 
-            <button type="submit" className="btn btn-primary w-100">
+            <button type="submit" className="btn btn-primary btnclass w-100">
               Sign Up
             </button>
           </form>

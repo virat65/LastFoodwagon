@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import productRouting from "../productRouting";
+import { useNavigate } from "react-router-dom";
 const AllProducts = () => {
   const [info, setInfo] = useState([]);
+  const navigate = useNavigate();
   const getAllProduct = async () => {
     try {
       // const allProductForm = new FormData();
@@ -21,8 +23,15 @@ const AllProducts = () => {
   useEffect(() => {
     getAllProduct();
   }, {});
+  const navigtedId = (iddd) => {
+    navigate(`/productview/${iddd}`);
+  };
+  const deleteId = (idd) => {
+    navigate(`/productdelete/${idd}`);
+  };
   return (
     <>
+      th
       <div className="mt-5 pt-5 px-2">
         <div className="p-6">
           <h1 className="text-2xl font-bold mb-4">📦 Product List</h1>
@@ -34,7 +43,9 @@ const AllProducts = () => {
                 <th className="p-2 border">Description</th>
                 <th className="p-2 border">Price</th>
                 <th className="p-2 border">Category</th>
-                <th className="p-2 border">Status</th>
+                <th className="p-2 border">Status</th>{" "}
+                <th className="p-2 border">View product </th>
+                <th className="p-2 border">Delete product </th>
               </tr>
             </thead>
             <tbody>
@@ -61,6 +72,16 @@ const AllProducts = () => {
                         Inactive
                       </span>
                     )}
+                  </td>{" "}
+                  <td className="p-2 border">
+                    <button onClick={() => navigtedId(product?._id)}>
+                      Details
+                    </button>
+                  </td>
+                  <td className="p-2 border">
+                    <button onClick={() => deleteId(product?._id)}>
+                      Delete
+                    </button>
                   </td>
                 </tr>
               ))}

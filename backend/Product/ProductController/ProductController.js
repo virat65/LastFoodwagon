@@ -4,8 +4,8 @@ import productModel from "../ProductModel/ProductSchme.js";
 
 export const newProduct = async (req, res) => {
   try {
-    const productname = req.body.name
-    console.log(productname,"productname")
+    const productname = req.body.name;
+    console.log(productname, "productname");
     const findProduct = await productModel.findOne({ name: req?.body?.name });
 
     if (findProduct) {
@@ -61,7 +61,7 @@ export const AllProducts = async (req, res) => {
 
 export const findProductById = async (req, res) => {
   try {
-    const product = await productModel.findOne({ _id: req.params.id });
+    const product = await productModel.findOne({ _id: req.params.iddd });
     return res.json({
       message: "Product finded",
       success: true,
@@ -72,4 +72,30 @@ export const findProductById = async (req, res) => {
     console.log(error, "Error in findProductById");
   }
 };
+export const deleteProduct = async (req, res) => {
+  try {
+    // const {id}= req.params
+    // const findProduct = await productModel.findOne(req.body.name);
+    const deletedProduct = await productModel.findByIdAndDelete(req.params.idd);
+    if (deleteProduct) {
+      console.log(deletedProduct, "DEleted product");
+      // console.log(findProduct, "find Product");
+      return res.json({
+        body: deletedProduct,
+        message: "Product deleted successfully",
+        status: 200,
+        success: true,
+      });}
+     else {
+        return res.json({
+          body: deletedProduct,
+          message: "Product not found ",
+          status: 404,
+          success: false,
+        });
 
+    }
+  } catch (error) {
+    console.log(error, "Error in delteProduct Api");
+  }
+};

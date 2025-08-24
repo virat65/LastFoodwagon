@@ -28,6 +28,8 @@ import Addproduct from "./components/Product/Addprodut/Addproduct.jsx";
 
 import AllProducts from "./components/Product/allProduct/AllProducts.jsx";
 import Singup from "./components/Home/Signup/Signup.jsx";
+import ViewProduct from "./components/Product/ViewProduct/viewProduct.jsx";
+import DeleteProduct from "./components/Product/DeleteProduct/DeleteProduct.jsx";
 
 
 
@@ -64,6 +66,8 @@ const App = () => {
           <Route path="/userdelete/:id" element={<UserDelete />} />
           <Route path="/addProduct" element={<Addproduct />} />
           <Route path="/AllProducts" element={<AllProducts />} />
+          <Route path="/productview/:id" element = {<ViewProduct/>}/>
+          <Route path ="/productdelete/:id" element={<DeleteProduct/>}/>
           {/* <First></First>
             <Second></Second>
             <Third></Third>
