@@ -4,6 +4,7 @@ import { useState } from "react";
 import API from "../../login/backendrouting";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import "./Signup.css"
 const Singup = () => {
   const navigate = useNavigate();
   const [data, setData] = useState({
@@ -69,7 +70,7 @@ const Singup = () => {
       <div className="col-12 col-sm-10 col-md-6 col-lg-4 mx-auto">
         <div className="card p-4 shadow">
           <h2 className="text-center mb-4">Signup</h2>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="signupform">
             <div className="mb-3">
               <label className="form-label">Your Name</label>
               <input

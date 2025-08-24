@@ -1,8 +1,8 @@
 
 @media (max-width: 620px) {
-  form {
+  .signupform {
     display: flex;
-    flex-direction: column !important;
+    flex-direction: column  !important;
   }
    .btnclass {
     width: 40vw !important;
