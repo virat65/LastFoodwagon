@@ -28,7 +28,7 @@ import Addproduct from "./components/Product/Addprodut/Addproduct.jsx";
 
 import AllProducts from "./components/Product/allProduct/AllProducts.jsx";
 import Singup from "./components/Home/Signup/Signup.jsx";
-import ViewProduct from "./components/Product/ViewProduct/viewProduct.jsx";
+import ViewProduct from "./components/Product/ViewProduct/ViewProduct.jsx";
 import DeleteProduct from "./components/Product/DeleteProduct/DeleteProduct.jsx";
 
 
