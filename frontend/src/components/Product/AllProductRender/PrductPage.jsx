@@ -17,7 +17,7 @@ const PrductPage = () => {
     <>
       <div className="mt-5 pt-5">
 <div className="container">
-  <div className="row gap-1 justify-content-evenly">
+  <div className="row gap-1 justify-content-evenly w-100">
 
         {allProducts.map((e,index) =>
         (

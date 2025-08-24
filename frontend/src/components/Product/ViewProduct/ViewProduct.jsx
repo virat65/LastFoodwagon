@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import productRouting from "../productRouting.js";
-
+import "./ViewProduct.css"
 const ViewProduct = () => {
   const [info, setInfo] = useState("");
   const { id } = useParams();
@@ -29,14 +29,14 @@ const ViewProduct = () => {
     getDetails();
   }, [id]);
   return (
-    <div>
-      <div className="bg-amber-100 flex items-center justify-center h-screen px-4 user">
+    <div className="viewproduct">
+      <div className="bg-amber-100 flex items-center justify-center  px-4 user">
         <div className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md text-center space-y-4">
           <div className="flex justify-center">
             <img
               src={info.pic}
               alt={info.name}
-              className="w-24 h-24 rounded-full object-cover border-4 border-amber-300"
+              className=" rounded object-cover border-4 border-amber-300 img-fluid"
             />
           </div>
           <div>
@@ -47,8 +47,9 @@ const ViewProduct = () => {
           </div>
           <Link
             to="/allproducts"
-            className="p-1  inline-block mt-1 bg-green-500 text-white  rounded-lg hover:bg-amber-600 transition bg-primary "
+            className=" text-decoration-none   inline-block mt-1 bg-green-500 text-white  rounded hover:bg-amber-600 transition bg-success p-2 rounded-3 text-center "
           >
+
             Back to Product List
           </Link>
         </div>

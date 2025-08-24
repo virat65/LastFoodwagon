@@ -36,36 +36,40 @@ const userDelete = (id)=>{
   }, []);
 
   return (
-    <div className="user-table-wrapper">
-      <h2>User Table</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>S.no</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Photo</th>
-            <th>Userview  </th>
-            <th>UserDelete  </th>
-          </tr>
-        </thead>
-        <tbody>
-          {info.map((e, index) => (
-            <tr key={e._id || index}>
-              <td>{index + 1}</td>
-              <td>{e.name}</td>
-              {console.log(e,"eeee")}
-              <td>{e.email}</td>
-              <td>
-                <img src={e.pic} alt="user" />
-              </td>
-              <td><button onClick={()=>navigatedId(e?._id)}>view</button></td>
-              <td><button onClick={()=>userDelete(e?._id)}>Delete</button></td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+   <div className="user-table-wrapper">
+  <h2>User Table</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>S.no</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Photo</th>
+        <th>User View</th>
+        <th>User Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {info.map((e, index) => (
+        <tr key={e._id || index}>
+          <td>{index + 1}</td>
+          <td>{e.name}</td>
+          <td>{e.email}</td>
+          <td>
+            <img src={e.pic} alt="user" />
+          </td>
+          <td>
+            <button onClick={() => navigatedId(e?._id)} className="px-3 py-1 bg-success text-white">View</button>
+          </td>
+          <td>
+            <button onClick={() => userDelete(e?._id)} className="px-2 py-1 bg-danger text-white">Delete</button>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
   );
 };
 

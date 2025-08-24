@@ -68,7 +68,7 @@ const Navbar = () => {
                   className="btn btn-outline-success colour"
                   href="#"
                   type="button"
-                  onClick={() => setSidebarOpen(true)}
+                  onClick={() => setSidebarOpen(!sidebarOpen)}
                 >
                   Profile
                 </button>
@@ -90,7 +90,7 @@ const Navbar = () => {
       {sidebarOpen && (
         <div className="sidebar position-fixed z-1 bg-white end-0 mt-5 p-5">
           <div className="sidebar-content">
-            <h4>Profile</h4>
+            <h4 > Profile</h4>
             <p>
               <strong>Name:</strong> {availableCookie?.name}
             </p>
@@ -103,7 +103,7 @@ const Navbar = () => {
             {availableCookie?.userType === "Admin" && (
               <>
                 <button
-                  className="btn btn-primary w-100 my-2"
+                  className="btn btn-primary d-block my-2"
                   onClick={() => {
                     navigate("/usertable");
                     setSidebarOpen(false);
@@ -120,33 +120,34 @@ const Navbar = () => {
                 >
                   Dashboard{" "}
                 </button>{" "} */}
-                <button
-                  className="btn btn-warning w-100 my-2"
-                  onClick={() => {navigate("/addproduct")
-                     setSidebarOpen(false);
-                  }}
-                >
-                  AddPrdouct{" "}
-                </button> <button
-                  className="btn btn-success w-100 my-2"
+               <button
+                  className="btn btn-info  d-block my-2"
                   onClick={() => {navigate("/allProducts")
                      setSidebarOpen(false);
                   }}
                 >
-                  AllProducts{" "}
+                  All Products Details{" "}
+                </button>  <button
+                  className="btn btn-success d-block my-2"
+                  onClick={() => {navigate("/addproduct")
+                     setSidebarOpen(false);
+                  }}
+                >
+                  Add Prdouct{" "}
                 </button>
+
               </>
             )}
               <button
-              className="btn btn-danger w-100 my-2"
+              className="btn btn-warning  d-block my-2"
               onClick={() => {
 
                 navigate("/productPage");
                  setSidebarOpen(false);
               }}
-            >ProductPAge</button>
+            >Product Page</button>
             <button
-              className="btn btn-danger w-100 my-2"
+              className="btn btn-danger  d-block my-2"
               onClick={() => {
                 handleLogout();
                 navigate("/");
@@ -156,7 +157,7 @@ const Navbar = () => {
             </button>
 
             <button
-              className="btn btn-secondary w-100 my-2"
+              className="btn btn-secondary  d-block my-2"
               onClick={() => setSidebarOpen(false)}
             >
               Close

@@ -26,15 +26,15 @@ const Userview = () => {
   useEffect(()=>{
 getData()
   },[id])
-  return <div>
+  return <div className="userview">
 
-        <div className="bg-amber-100 flex items-center justify-center h-screen px-4 user">
+        <div className="bg-amber-100 flex items-center justify-center  px-4 user">
       <div className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md text-center space-y-4">
         <div className="flex justify-center">
           <img
             src={info.pic}
             alt="User"
-            className="w-24 h-24 rounded-full object-cover border-4 border-amber-300"
+            className="img-fluid rounded-0 object-cover border-4 border-amber-300"
           />
         </div>
         <div>
@@ -43,7 +43,7 @@ getData()
         </div>
         <Link
           to="/usertable"
-          className="p-1  inline-block mt-1 bg-green-500 text-white  rounded-lg hover:bg-amber-600 transition bg-primary "
+          className="p-2 text-decoration-none  inline-block mt-1 bg-green-500 text-white  rounded-lg hover:bg-amber-600 transition bg-success rounded-2  "
         >
           Back to User List
         </Link>

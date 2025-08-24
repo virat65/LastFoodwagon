@@ -1,15 +1,13 @@
-.user{
-  margin-top: 100px;
-}
-
-.userview img{
-  width: 15vw;
+.viewproduct img{
+  width: 20vw;
   /* height: 50vh; */
 }
-.userview {
+.viewproduct {
   min-height: 100vh;        /* full screen height */
   display: flex;
-  /* align-items: center; */
+  align-items: center;
   justify-content: center;
   overflow-x: hidden;       /* prevent horizontal scroll */
 }
+
+
