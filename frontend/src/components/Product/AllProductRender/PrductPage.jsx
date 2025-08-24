@@ -16,8 +16,10 @@ const PrductPage = () => {
   return (
     <>
       <div className="mt-5 pt-5">
+<div className="container">
+  <div className="row gap-1 justify-content-evenly">
 
-        {allProducts.map((e) =>
+        {allProducts.map((e,index) =>
         (
           <>
 
@@ -28,17 +30,18 @@ const PrductPage = () => {
 <h1>price = {e.price}</h1>
 {console.log(`${e.picture}`)} */}
 
-<div class="card mb-3" >
-  <div class="row g-0">
+<div class="card mb-3 col-lg-5 col-11 p-2" key={index}>
+      <p>{index+1}</p>
+  <div class="row g-0 ">
     <div class="col-md-4">
-      <img src={e.picture}  alt="..."/>
+      <img src={e.picture}  alt="..." className="w-100 img-fluid  rounded-0"/>
       {console.log(e.picture,"picture url")}
     </div>
     <div class="col-md-8">
-      <div class="card-body">
+      <div class="card-body ">
         <h5 class="card-title">{e.name}</h5>
-        <p class="card-text">{e.description}</p>
-        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+        <p class="card-text">{e.category}</p>
+        <p class="card-text"><small class="text-body-secondary">{e.description}</small></p>
       </div>
     </div>
   </div>
@@ -50,7 +53,7 @@ const PrductPage = () => {
 
      )
         )}
-      </div>
+      </div></div></div>
     </>
   );
 };
