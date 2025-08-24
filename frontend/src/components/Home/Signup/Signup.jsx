@@ -70,9 +70,9 @@ const Singup = () => {
       <div className="col-12 col-sm-10 col-md-6 col-lg-4 mx-auto">
         <div className="card p-4 shadow">
           <h2 className="text-center mb-4">Signup</h2>
-          <form onSubmit={handleSubmit} className="signupform">
+          <form onSubmit={handleSubmit} className="signupform mt-5">
             <div className="mb-3">
-              <label className="form-label">Your Name</label>
+              <label className="form-label d-block">Your Name</label>
               <input
                 onChange={handleChange}
                 type="text"
@@ -84,7 +84,7 @@ const Singup = () => {
             </div>
 
             <div className="mb-3">
-              <label className="form-label">Email address</label>
+              <label className="form-label d-block  ">Email address</label>
               <input
                 onChange={handleChange}
                 type="text"
@@ -97,7 +97,7 @@ const Singup = () => {
 
             {data?.userType === "Admin" && (
               <div className="mb-3">
-                <label className="form-label">Secret key</label>
+                <label className="form-label d-block">Secret key</label>
                 <input
                   onChange={handleChange}
                   type="password"
@@ -109,7 +109,7 @@ const Singup = () => {
             )}
 
             <div className="mb-3">
-              <label className="form-label me-2">ID Type</label>
+              <label className="form-label me-2 ">ID Type</label>
               <div>
                 <input
                   onChange={handleChange}
@@ -132,7 +132,7 @@ const Singup = () => {
             </div>
 
             <div className="mb-3">
-              <label className="form-label">Photo</label>
+              <label className="form-label d-block">Photo</label>
               <input
                 onChange={handleChange}
                 type="file"
@@ -142,7 +142,7 @@ const Singup = () => {
             </div>
 
             <div className="mb-3">
-              <label className="form-label">Password</label>
+              <label className="form-label d-block">Password</label>
               <input
                 onChange={handleChange}
                 type="password"
