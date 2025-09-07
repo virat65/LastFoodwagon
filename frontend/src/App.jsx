@@ -32,6 +32,7 @@ import ViewProduct from "./components/Product/ViewProduct/ViewProduct.jsx";
 import DeleteProduct from "./components/Product/DeleteProduct/DeleteProduct.jsx";
 
 import PrductPage from "./components/Product/AllProductRender/PrductPage.jsx";
+import CartPage from "./components/cartPage/CartPage.jsx";
 
 const App = () => {
   return (
@@ -46,7 +47,7 @@ const App = () => {
               <>
                 <First></First>
                 <Second></Second>
-                <Third></Third>  <Fourth></Fourth>
+                <Third></Third> <Fourth></Fourth>
                 <Five></Five>
                 <Sixth></Sixth>
                 <Seven></Seven>
@@ -58,16 +59,17 @@ const App = () => {
               </>
             }
           />
-          <Route path="/login" element={<Login />} /> <Route path="/sign" element={<Singup/>} />
-
+          <Route path="/login" element={<Login />} />{" "}
+          <Route path="/sign" element={<Singup />} />
           <Route path="/usertable" element={<UserTable />} />
           <Route path="/userview/:id" element={<Userview />} />
           <Route path="/userdelete/:id" element={<UserDelete />} />
           <Route path="/addProduct" element={<Addproduct />} />
           <Route path="/AllProducts" element={<AllProducts />} />
-          <Route path="/productview/:id" element = {<ViewProduct/>}/>
-          <Route path ="/productdelete/:id" element={<DeleteProduct/>}/>
-          <Route path="/productPage" element= {<PrductPage/>}/>
+          <Route path="/productview/:id" element={<ViewProduct />} />
+          <Route path="/productdelete/:id" element={<DeleteProduct />} />
+          <Route path="/productPage" element={<PrductPage />} />
+          <Route path="/cart" element={<CartPage />} />
           {/* <First></First>
             <Second></Second>
             <Third></Third>

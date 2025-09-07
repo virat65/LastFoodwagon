@@ -1,6 +1,6 @@
 import React from "react";
 import { images } from "../../../assets/img/images";
-
+import "./Eight.css"
 const Eight = () => {
   return (
     <div>
@@ -9,12 +9,12 @@ const Eight = () => {
           <div className="col-md-7">
             <img
               src={images.friedchicken}
-              className=" rounded-start img-fluid w-100"
+              className=" h-100 img-fluid w-100"
               alt="..."
             />
           </div>
-          <div className="col-md-5">
-            <div className="card-body">
+          <div className="col-md-5  ">
+            <div className="card-body d-flex justify-content-center  flex-column align-items-center text-align-center h-100">
               <h5 className="card-title ">Celebrate
                 Parties with Fried Chicken
               </h5>
@@ -26,6 +26,7 @@ const Eight = () => {
               <p className="card-text">
                 <small className="text-muted">Last updated 3 mins ago</small>
               </p>
+              <button type="button" className=" mx-5 btn btn-warning  w-50  ">Proceed to Pay</button>
             </div>
           </div>
         </div>

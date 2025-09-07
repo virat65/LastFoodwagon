@@ -4,7 +4,7 @@ import "./Second.css";
 const Second = () => {
   return (
     <>
-      <div className="cards">
+      <div className="cards d-flex gap-2">
         <div className="first ">
           <div className="img-part card-designs">
             <div className="percent-off">

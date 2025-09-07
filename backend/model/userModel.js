@@ -8,7 +8,9 @@ const schema = mongoose.Schema(
     image: { type: String, default: "" },
     phone: { type: String, default: "" },
     token: { type: String, default: "" },
-    userType: { type: String,default:["user","Admin"] },
+    userType: [{ type: String, enum: ["user", "Admin"], default: "user" }],
+
+    // cart: [{ type: mongoose.Schema.Types.ObjectId, ref: "cartmodel" }],
   },
   { timestamps: true }
 );

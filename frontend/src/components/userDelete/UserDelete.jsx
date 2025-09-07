@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import API from "../login/backendrouting";
+import API from "../Product/backendrouting";
 import "./UserDelete.css";
 
 const UserDelete = () => {
@@ -33,8 +33,12 @@ const UserDelete = () => {
       <div className="user-delete-box">
         <h2>Are you sure you want to delete this user?</h2>
         <div className="button-group gap-2 d-flex justify-content-center flex-column  align-items-center">
-          <button className="btn btn-danger w-50" onClick={handleDelete}>Yes, Delete</button>
-          <button className="btn btn-secondary w-50" onClick={handleCancel}>Cancel</button>
+          <button className="btn btn-danger w-50" onClick={handleDelete}>
+            Yes, Delete
+          </button>
+          <button className="btn btn-secondary w-50" onClick={handleCancel}>
+            Cancel
+          </button>
         </div>
       </div>
     </div>

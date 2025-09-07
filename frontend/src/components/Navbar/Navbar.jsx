@@ -10,7 +10,7 @@ const Navbar = () => {
   const getcookies = cookie.get("userInfo");
   const availableCookie = getcookies ? JSON.parse(getcookies) : null;
 
-  console.log(availableCookie, "cookiiiie");
+  // console.log(availableCookie, "cookiiiie");
   const handleLogout = () => {
     cookie.remove("userInfo");
     setTimeout(() => {
@@ -64,14 +64,17 @@ const Navbar = () => {
                 aria-label="Search"
               />
               {availableCookie ? (
-                <button
-                  className="btn btn-outline-success colour"
-                  href="#"
-                  type="button"
-                  onClick={() => setSidebarOpen(!sidebarOpen)}
-                >
-                  Profile
-                </button>
+                <>
+                  <button
+                    className="btn btn-outline-success colour"
+                    href="#"
+                    type="button"
+                    onClick={() => setSidebarOpen(!sidebarOpen)}
+                  >
+                    Profile
+                  </button>
+
+                </>
               ) : (
                 <Link aria-current="page" to={"/login"}>
                   <button
@@ -82,6 +85,7 @@ const Navbar = () => {
                     Login
                   </button>
                 </Link>
+
               )}{" "}
             </form>
           </div>
@@ -90,7 +94,7 @@ const Navbar = () => {
       {sidebarOpen && (
         <div className="sidebar position-fixed z-1 bg-white end-0 mt-5 p-5">
           <div className="sidebar-content">
-            <h4 > Profile</h4>
+            <h4> Profile</h4>
             <p>
               <strong>Name:</strong> {availableCookie?.name}
             </p>
@@ -120,32 +124,39 @@ const Navbar = () => {
                 >
                   Dashboard{" "}
                 </button>{" "} */}
-               <button
+                <button
                   className="btn btn-info  d-block my-2"
-                  onClick={() => {navigate("/allProducts")
-                     setSidebarOpen(false);
+                  onClick={() => {
+                    navigate("/allProducts");
+                    setSidebarOpen(false);
                   }}
                 >
                   All Products Details{" "}
-                </button>  <button
+                </button>{" "}
+                <button
                   className="btn btn-success d-block my-2"
-                  onClick={() => {navigate("/addproduct")
-                     setSidebarOpen(false);
+                  onClick={() => {
+                    navigate("/addproduct");
+                    setSidebarOpen(false);
                   }}
                 >
                   Add Prdouct{" "}
                 </button>
-
               </>
             )}
-              <button
+            <button
               className="btn btn-warning  d-block my-2"
               onClick={() => {
-
                 navigate("/productPage");
-                 setSidebarOpen(false);
+                setSidebarOpen(false);
               }}
-            >Product Page</button>
+            >
+              Product Page
+            </button>
+
+              <Link to={"/cart"}>
+                    <button> CartPAge</button>
+                  </Link>
             <button
               className="btn btn-danger  d-block my-2"
               onClick={() => {

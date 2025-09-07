@@ -9,8 +9,8 @@ const Five = () => {
           <div className="col center my-5 ">
             <h2>Featured Restaurants</h2>
           </div>
-          <div className="cardForming">
-           <div className="col ">
+          <div className="cardForming d-flex justify-content-center ">
+           <div className="col d-flex justify-content-center  flex-column align-items-center">
               <div
                 className="cardd"
                 style={{ width: "18rem", position: "relative" }}
@@ -108,7 +108,7 @@ const Five = () => {
               </div>
               <p className="cardsss">Open Tomorrow</p>
             </div>
-            <div className="col ">
+            <div className="col col d-flex justify-content-center  flex-column align-items-center">
               <div
                 className="cardd"
                 style={{ width: "18rem", position: "relative" }}
@@ -205,7 +205,7 @@ const Five = () => {
                 </div>
               </div>
               <p className="cardsss">Open Tomorrow</p>
-            </div>  <div className="col ">
+            </div>  <div className="col col d-flex justify-content-center  flex-column align-items-center">
               <div
                 className="cardd"
                 style={{ width: "18rem", position: "relative" }}
@@ -303,7 +303,7 @@ const Five = () => {
               </div>
               <p className="cardsss">Open Tomorrow</p>
             </div>
-            <div className="col ">
+            <div className="col col d-flex justify-content-center  flex-column align-items-center">
               <div
                 className="cardd"
                 style={{ width: "18rem", position: "relative" }}
@@ -400,7 +400,7 @@ const Five = () => {
                 </div>
               </div>
               <p className="cardsss">Open Tomorrow</p>
-            </div>  <div className="col ">
+            </div>  <div className="col col d-flex justify-content-center  flex-column align-items-center">
               <div
                 className="cardd"
                 style={{ width: "18rem", position: "relative" }}
@@ -498,7 +498,7 @@ const Five = () => {
               </div>
               <p className="cardsss">Open Tomorrow</p>
             </div>
-            <div className="col ">
+            <div className="col col d-flex justify-content-center  flex-column align-items-center ">
               <div
                 className="cardd"
                 style={{ width: "18rem", position: "relative" }}

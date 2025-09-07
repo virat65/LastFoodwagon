@@ -11,7 +11,7 @@ export const signup = async (req, res) => {
     const query = [];
     // console.log(query,"query")
     if (emailFind) {
-      query.push({ email: RegExp(`^${emailFind}$`) });
+      query.push({ email: new RegExp(`^${emailFind}$`, "i") });
     }
     if (phoneFind) {
       query.push({ phone: phoneFind });
@@ -73,7 +73,6 @@ export const signup = async (req, res) => {
 };
 export const login = async (req, res) => {
   try {
-
     const emailFind = req.body?.email?.trim();
     const phoneFind = req.body?.phone?.trim();
     const query = [];
@@ -91,10 +90,10 @@ export const login = async (req, res) => {
         body: {},
       });
     } else {
-      console.log(query,"query");
+      console.log(query, "query");
       const user = await userModel.findOne({ $or: query });
       console.log(user, "userrrr");
-          console.log(req.body,"reqq from login");
+      console.log(req.body, "reqq from login");
 
       if (!user) {
         return res.json({
@@ -116,6 +115,11 @@ export const login = async (req, res) => {
             body: {},
           });
         } else {
+          console.log(user, "userrrr");
+          const tokenCall = await tokenGen(user._id);
+          user.token = tokenCall.createToken;
+          user.logintime = tokenCall.decodeToken.iat;
+          user.save();
           return res.json({
             message: "login succesfully",
             status: 200,

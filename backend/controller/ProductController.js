@@ -1,6 +1,6 @@
-import productsImageUpload from "../productimageUpload/productimageUpload.js";
+import productsImageUpload from "../imageUpload/productimageUpload.js";
 
-import productModel from "../ProductModel/ProductSchme.js";
+import productModel from "../model/ProductSchme.js";
 
 export const newProduct = async (req, res) => {
   try {
@@ -44,8 +44,8 @@ export const AllProducts = async (req, res) => {
     const allproucts = products.map((e) => {
       return {
         ...e.toObject(),
-        // picture: `http://localhost:1234/productImages/${e.image}`,
-        picture: `${process.env.baseurl}/productImages/${e.image}`,
+        picture: `http://localhost:1234/productImages/${e.image}`,
+        // picture: `${process.env.baseurl}/productImages/${e.image}`,
       };
     });
     return res.json({
@@ -85,15 +85,14 @@ export const deleteProduct = async (req, res) => {
         message: "Product deleted successfully",
         status: 200,
         success: true,
-      });}
-     else {
-        return res.json({
-          body: deletedProduct,
-          message: "Product not found ",
-          status: 404,
-          success: false,
-        });
-
+      });
+    } else {
+      return res.json({
+        body: deletedProduct,
+        message: "Product not found ",
+        status: 404,
+        success: false,
+      });
     }
   } catch (error) {
     console.log(error, "Error in delteProduct Api");

@@ -4,7 +4,7 @@ import {
   deleteProduct,
   findProductById,
   newProduct,
-} from "../ProductController/ProductController.js";
+} from "../controller/ProductController.js";
 
 const ProductRouter = express.Router();
 ProductRouter.post("/create", newProduct);

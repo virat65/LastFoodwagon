@@ -1,4 +1,5 @@
 const backendUrl =import.meta.env.VITE_BACKENDURL;
+console.log(backendUrl,"backendurl")
 const API = {
   signup: {
     method: "post",

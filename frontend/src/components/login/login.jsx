@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import API from "./backendrouting.js";
+import API from "../Product/backendrouting.js";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import cookie from "js-cookie";
-import "./Login.css"
+import "./Login.css";
 const Login = () => {
   const navigate = useNavigate();
   const [data, setData] = useState({});
@@ -25,6 +25,7 @@ const Login = () => {
         // localStorage.setItem("userToken", JSON.stringify(formdata.data.body));
         // sessionStorage.setItem("userToken", JSON.stringify(formdata.data.body));
         cookie.set("userInfo", JSON.stringify(formdata.data.body));
+        console.log(formdata.data.body, "formdata.data.body");
         navigate("/");
         setTimeout(() => {
           window.location.reload();
@@ -71,7 +72,10 @@ const Login = () => {
                     placeholder="Enter your password"
                   />
                 </div>
-                <button type="submit" className="btn btn-primary btnclass w-lg-100">
+                <button
+                  type="submit"
+                  className="btn btn-primary btnclass w-lg-100"
+                >
                   Login
                 </button>
               </form>
