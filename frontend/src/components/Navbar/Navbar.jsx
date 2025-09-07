@@ -102,7 +102,7 @@ const Navbar = () => {
               <strong>Email:</strong> {availableCookie?.email}
             </p>
 
-            {console.log(availableCookie, "cooo")}
+            {/* {console.log(availableCookie, "cooo")} */}
 
             {availableCookie?.userType === "Admin" && (
               <>

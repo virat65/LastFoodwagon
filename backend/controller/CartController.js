@@ -86,8 +86,8 @@ export const updateCart = async (req, res) => {
   try {
     const cartitem = await cartModel.findByIdAndUpdate(
       req.params.id,
+      { $set: req.body },
       { new: true },
-      { $set: req.body }
     );
     return res.json({
       message: "cart Updated",

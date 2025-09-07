@@ -15,7 +15,7 @@ const CartPage = () => {
         headers: { Authorization: `Bearer ${tokenGen.token}` },
       });
       setItems(allitems.data.body || []);
-      console.log(allitems,"allitems")
+      // console.log(allitems,"allitems")
     } catch (error) {
       console.log("Error in getAllItems", error);
     }

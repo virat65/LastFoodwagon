@@ -6,7 +6,7 @@ import cookie from "js-cookie";
 const First = () => {
   const geTokennn = cookie.get("userInfo");
   const token = geTokennn ? JSON.parse(geTokennn) : null;
-  console.log(token,"user token");
+  // console.log(token,"user token");
   return (
 <div className="container mt-4">
     <div className="home-first row row-cols-1 row-cols-lg-2 ">
