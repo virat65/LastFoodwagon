@@ -10,7 +10,7 @@ import ProductRouter from "./routes/ProductRoutes.js";
 import cartRoutes from "./routes/cartRoutes.js";
 const app = express();
 dotenv.config();
-const port = process.env.baseurl || 5000;
+const port = process.env.baseurl || 1234;
 app.use(express.json());
 const currentpath = fileURLToPath(import.meta.url);
 console.log(currentpath, "current file path");
