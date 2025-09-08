@@ -104,7 +104,7 @@ const Navbar = () => {
 
             {/* {console.log(availableCookie, "cooo")} */}
 
-            {availableCookie?.userType === "Admin" && (
+            {availableCookie?.userType.includes("Admin")  && (
               <>
                 <button
                   className="btn btn-primary d-block my-2"

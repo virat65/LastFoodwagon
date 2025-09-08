@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import cookies from "js-cookie";
 import axios from "axios";
-import API from "../../Product/backendrouting";
+import API from "../Product/backendrouting";
 import "./UserTable.css"; // 🔹 Import your CSS file
 import { useNavigate } from "react-router-dom";
 const UserTable = () => {
   const getcookies = cookies.get("userInfo");
   const avilableCookie = getcookies ? JSON.parse(getcookies) : null;
   const [info, setInfo] = useState([]);
+  const [searchuser, setSearchuser] = useState("");
   const navigate = useNavigate();
 
   const getData = async () => {
@@ -29,13 +30,40 @@ const UserTable = () => {
   const userDelete = (id) => {
     navigate(`/userdelete/${id}`);
   };
+  const handleChange = (e) => {
+    const inputValue = e.target.value;
+    setSearchuser(inputValue);
+    console.log(inputValue);
+  };
+  const filterUsers = (arr) => {
+    if (!searchuser) return arr;
+    else {
+      return arr.filter((user) =>
+        user.name.toLowerCase().includes(searchuser.toLowerCase())
+      );
+    }
+  };
   useEffect(() => {
     getData();
   }, []);
 
   return (
-    <div className="user-table-wrapper">
-      <h2>User Table</h2>
+    <div className="user-table-wrapper pt-5">
+      <div className="top-usertable d-flex justify-content-evenly mb-2">
+        <h2>User Table</h2>
+
+        <div className="d-flex align-items-center gap-2">
+    <input
+      type="text"
+      id="username"
+      className="form-control"
+      style={{ width: "250px" }}
+      placeholder="🔍 Search by name..."
+      value={searchuser}
+      onChange={handleChange}
+    />
+  </div>
+      </div>
       <table>
         <thead>
           <tr>
@@ -48,7 +76,7 @@ const UserTable = () => {
           </tr>
         </thead>
         <tbody>
-          {info.map((e, index) => (
+          {filterUsers(info).map((e, index) => (
             <tr key={e._id || index}>
               <td>{index + 1}</td>
               <td>{e.name}</td>

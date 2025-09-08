@@ -49,7 +49,7 @@ const AddProduct = () => {
       const product = await axios.post(
         productRouting.addProduct.url,
         allProductForm
-      );   
+      );
       console.log(product, "productssss");
       console.log("Product Added:", productData);
       // toast.success("Product added successfully!");
@@ -72,8 +72,8 @@ const AddProduct = () => {
   };
 
   return (
-    <div className="container mt-5">
-      <h2 className="mb-4 text-center">Add New Product</h2>
+    <div className="container mt-lg-1 mt-5 pt-5 gap-0">
+      <h2 className=" text-center mt-5">Add New Product</h2>
       <form
         onSubmit={handleSubmit}
         className="p-4 shadow rounded bg-light d-flex flex-column"

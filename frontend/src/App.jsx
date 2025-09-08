@@ -21,7 +21,7 @@ import Thirteen from "./components/Home/Thirteen/Thirteen.jsx";
 // import Twelve from "./components/Home/Twelve/Twelve.jsx";
 import { ToastContainer } from "react-toastify";
 
-import UserTable from "./components/Home/userTable/UserTable.jsx";
+import UserTable from "./components/userTable/UserTable.jsx";
 import Userview from "./components/userview/Userview.jsx";
 import UserDelete from "./components/userDelete/UserDelete.jsx";
 import Addproduct from "./components/Product/Addprodut/Addproduct.jsx";

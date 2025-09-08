@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const AllProducts = () => {
   const [info, setInfo] = useState([]);
   const navigate = useNavigate();
-
+  const [searchProduct, setSearchProduct] = useState("");
   const getAllProduct = async () => {
     try {
       const allproducts = await axios.get(productRouting.allProduct.url);
@@ -28,11 +28,34 @@ const AllProducts = () => {
   const deleteId = (idd) => {
     navigate(`/productdelete/${idd}`);
   };
-
+  const handleChange = (e) => {
+    const inputValue = e.target.value;
+    setSearchProduct(inputValue);
+    console.dir(e,"ee")
+    console.log(inputValue);
+  };
+  const filterdProducts= (arr)=>{
+    if(!searchProduct) return arr
+    else{
+      return arr.filter((product)=>product.name.toLowerCase().includes(searchProduct.toLowerCase()))
+    }
+  }
   return (
     <div className="mt-5 pt-5 mx-4">
-      <h1 className="text-2xl font-bold mb-6 text-center">📦 Product List</h1>
-
+      <div className="allproduct-topbar d-flex justify-content-evenly">
+        <h1 className="text-2xl font-bold mb-6 text-center">📦 Product List</h1>
+        <div className="d-flex align-items-center gap-2">
+          <input
+            type="text"
+            id="username"
+            className="form-control"
+            style={{ width: "250px" }}
+            placeholder="🔍 Search by name..."
+            value={searchProduct}
+            onChange={handleChange}
+          />
+        </div>
+      </div>
       {/* Make table responsive with overflow-x */}
       <div className="overflow-x-auto shadow-lg rounded-lg">
         <table className="min-w-full border border-gray-300 bg-white">
@@ -51,7 +74,8 @@ const AllProducts = () => {
           </thead>
 
           <tbody>
-            {info.map((product, indexx) => (
+            {console.log(filterdProducts,"filterproducts")}
+            {filterdProducts(info).map((product, indexx) => (
               <tr
                 key={product._id}
                 className="text-center hover:bg-gray-100 text-sm sm:text-base"
@@ -74,9 +98,7 @@ const AllProducts = () => {
                   {product.isActive ? (
                     <span className="text-green-600 font-semibold">Active</span>
                   ) : (
-                    <span className="text-red-600 font-semibold">
-                      Inactive
-                    </span>
+                    <span className="text-red-600 font-semibold">Inactive</span>
                   )}
                 </td>
                 <td className="p-2 border">
