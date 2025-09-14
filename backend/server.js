@@ -10,7 +10,7 @@ import ProductRouter from "./routes/ProductRoutes.js";
 import cartRoutes from "./routes/cartRoutes.js";
 const app = express();
 dotenv.config();
-const port = process.env.baseurl || 1234;
+const port = 1234||process.env.baseurl;
 app.use(express.json());
 const currentpath = fileURLToPath(import.meta.url);
 console.log(currentpath, "current file path");
@@ -21,7 +21,7 @@ app.use(
   "/productImages",
   express.static(path.join(currentDir, "Public/productImages"))
 );
-app.use(fileUpload());
+app.use(fileUpload({ useTempFiles: true }));
 app.use(cors());
 app.use("/user", userRouter);
 app.use("/product", ProductRouter);

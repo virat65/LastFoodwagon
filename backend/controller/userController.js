@@ -1,4 +1,4 @@
-import imageUpload from "../imageUpload/imageUploading.js";
+import imageUpload from "../helper/imageUploading.js";
 import userModel from "../model/userModel.js";
 import tokenGen from "../tokenGen/tokenGen.js";
 import bcrypt from "bcrypt";
