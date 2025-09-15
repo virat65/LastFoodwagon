@@ -1,18 +1,82 @@
-@media (max-width: 620px) {
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-   .btnclass {
-    width: 40vw !important;
-    /* width: 20px; */
-    /* display: none; */
-  }
+/* Container */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  padding: 15px;
 }
-@media (min-width:621px) {
-   .btnclass {
-    width: 80vw !important;
-    /* width: 20px; */
-    /* display: none; */
+
+/* Card */
+.login-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 25px;
+  width: 100%;
+  max-width: 380px;
+}
+
+/* Title */
+.login-card h2 {
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: #333;
+  text-align: center;
+}
+
+/* Inputs */
+.login-card .form-control {
+  border-radius: 6px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  transition: border-color 0.2s ease;
+}
+
+.login-card .form-control:focus {
+  border-color: #fb3c00;
+  outline: none;
+  box-shadow: 0 0 4px rgba(251, 60, 0, 0.25);
+}
+
+/* Button */
+.btnclass {
+  background: #fb3c00;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.btnclass:hover {
+  background: #e03500;
+}
+
+/* Sign up text */
+.login-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.login-card p a {
+  text-decoration: none;
+  color: #fb3c00;
+  font-weight: 500;
+}
+
+.login-card p a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 620px) {
+  .btnclass {
+    width: 100% !important;
+  }
+
+  .login-card {
+    padding: 20px;
   }
 }

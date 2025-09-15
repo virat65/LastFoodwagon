@@ -5,85 +5,82 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import cookie from "js-cookie";
 import "./Login.css";
+
 const Login = () => {
   const navigate = useNavigate();
-  const [data, setData] = useState({});
-  console.log(data);
+  const [data, setData] = useState({ email: "", password: "" });
+
   const handleChange = (e) => {
-    console.log(e);
     setData({ ...data, [e.target.name]: e.target.value });
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
-      const formdata = await axios.post(API.login.url, data);
-      console.log(formdata, "DAta");
-      if (formdata.data.status === 200) {
-        toast.success(formdata.data.message);
-        console.log("first", formdata.data.message);
-        console.log(" logini sucess");
-        // localStorage.setItem("userToken", JSON.stringify(formdata.data.body));
-        // sessionStorage.setItem("userToken", JSON.stringify(formdata.data.body));
-        cookie.set("userInfo", JSON.stringify(formdata.data.body));
-        console.log(formdata.data.body, "formdata.data.body");
+      const res = await axios.post(API.login.url, data);
+
+      if (res.data.status === 200) {
+        toast.success(res.data.message);
+        cookie.set("userInfo", JSON.stringify(res.data.body));
         navigate("/");
-        setTimeout(() => {
-          window.location.reload();
-        }, 1000);
+        setTimeout(() => window.location.reload(), 1000);
       } else {
-        toast.error(formdata.data.message);
+        toast.error(res.data.message);
       }
     } catch (error) {
-      toast.error(error);
-      console.log(error, "error in handleSubmit");
+      toast.error("Login failed. Please try again.");
+      console.error("Error in handleSubmit:", error);
     }
   };
+
   return (
-    <div className="container-fluid d-flex justify-content-center align-items-center min-vh-100">
-      <div className="row w-100">
-        <div className="col-12 col-sm-10 col-md-6 col-lg-4 mx-auto">
-          <div className="login-container  container mt-5 d-flex justify-content-center align-items-center ">
-            <div className="login-card p-4 shadow ">
-              <h2 className="text-center mb-4">Login</h2>
-              <form onSubmit={handleSubmit} className="">
-                <div className="mb-3">
-                  <label htmlFor="email" className="form-label d-block">
-                    Email or phoneNumber
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    value={data.email}
-                    name="email"
-                    placeholder=" email OR phoneNumber"
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="password" className="form-label d-block">
-                    Password
-                  </label>
-                  <input
-                    onChange={handleChange}
-                    type="password"
-                    name="password"
-                    className="form-control"
-                    value={data.password}
-                    placeholder="Enter your password"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="btn btn-primary btnclass w-lg-100"
-                >
-                  Login
-                </button>
-              </form>
-              <p className="text-center mt-3">
-                Don't have an account? <a href="/sign">Sing UP</a>
-              </p>
-            </div>{" "}
-          </div>{" "}
+    <div className="container-fluid d-flex justify-content-center align-items-center min-vh-100 mt-4">
+      <div className="col-12 col-sm-10 col-md-6 col-lg-4">
+        <div className="login-card p-4 shadow rounded">
+          <h2 className="text-center mt-4">Login</h2>
+
+          <form onSubmit={handleSubmit}>
+            {/* Email / Phone */}
+            <div className="mb-3">
+              <label htmlFor="email" className="form-label">
+                Email or Phone Number
+              </label>
+              <input
+                type="text"
+                name="email"
+                value={data.email}
+                onChange={handleChange}
+                className="form-control"
+                placeholder="Enter email or phone number"
+                required
+              />
+            </div>
+
+            {/* Password */}
+            <div className="mb-3">
+              <label htmlFor="password" className="form-label">
+                Password
+              </label>
+              <input
+                type="password"
+                name="password"
+                value={data.password}
+                onChange={handleChange}
+                className="form-control"
+                placeholder="Enter your password"
+                required
+              />
+            </div>
+
+            <button type="submit" className="btn btn-primary w-100">
+              Login
+            </button>
+          </form>
+
+          <p className="text-center mt-3">
+            Don’t have an account? <a href="/sign">Sign Up</a>
+          </p>
         </div>
       </div>
     </div>

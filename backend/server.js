@@ -8,25 +8,31 @@ import { fileURLToPath } from "url";
 import path from "path";
 import ProductRouter from "./routes/ProductRoutes.js";
 import cartRoutes from "./routes/cartRoutes.js";
-const app = express();
+
 dotenv.config();
-const port = 1234||process.env.baseurl;
+const app = express();
+const port = process.env.PORT || 1234;
+
+// Middleware
 app.use(express.json());
-const currentpath = fileURLToPath(import.meta.url);
-console.log(currentpath, "current file path");
-const currentDir = path.dirname(currentpath);
-console.log(currentDir, "currentDireactory");
-app.use("/images", express.static(path.join(currentDir, "Public/images")));
-app.use(
-  "/productImages",
-  express.static(path.join(currentDir, "Public/productImages"))
-);
-app.use(fileUpload({ useTempFiles: true }));
 app.use(cors());
+app.use(fileUpload({ useTempFiles: true }));
+
+// Static folders (optional if using Cloudinary)
+const currentpath = fileURLToPath(import.meta.url);
+const currentDir = path.dirname(currentpath);
+app.use("/images", express.static(path.join(currentDir, "Public/images")));
+app.use("/productImages", express.static(path.join(currentDir, "Public/productImages")));
+
+// Routes
 app.use("/user", userRouter);
 app.use("/product", ProductRouter);
 app.use("/cart", cartRoutes);
+
+// Database connection
 dataConnect();
+
+// Server
 app.listen(port, () => {
-  console.log(`server is runnnin on ther ${port}`);
+  console.log(`Server is running on port ${port}`);
 });

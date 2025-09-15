@@ -17,7 +17,10 @@ import quickdelivery from "./quick-delivery.png";
 import discounts from "./discounts.png";
 import phone from "./phone-cta-one.png"
 import friedchicken from "./fried-chicken.png"
+import noodles from "./noodles.png"
+import burger from "./burger.png"
 export const images = {
+  burger,
   phone,
   friedchicken,
   cheeseBurger,
@@ -37,12 +40,20 @@ export const images = {
   discount3,
   discount4,
   maggie,
+  noodles
 };
 
 export const menu_list = [
   {
-    menu_name: "flat Hill slinigback",
+    menu_name: "Flat Hill slinigback",
     menu_img: discount1,
+  },
+  {menu_name:"Noodles",
+    menu_img:noodles
+  },
+   {
+    menu_name: "Burger",
+    menu_img: burger,
   },
   {
     menu_name: "Ocean blue ring",
@@ -53,11 +64,11 @@ export const menu_list = [
     menu_img: discount3,
   },
   {
-    menu_name: "silverside Wristwatch",
+    menu_name: "Silverside Wristwatch",
     menu_img: discount4,
   },
-  // {
-  //   menu_name: "maggie",
-  //   menu_img: maggie,
-  // },
+  {
+    menu_name: "Maggie",
+    menu_img: maggie,
+  },
 ];

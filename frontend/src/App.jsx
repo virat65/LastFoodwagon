@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Login from "./components/login/login.jsx";
 // import Signup from "./components/singup/Singup.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
+// import First from "./components/Home/Banner/Hero.jsx/index.js";
 import First from "./components/Home/First/First.jsx";
 import Second from "./components/Home/Second/Second.jsx";
 import Third from "./components/Home/Third/Third.jsx";
@@ -16,8 +17,9 @@ import Seven from "./components/Home/Seventh/Seven.jsx";
 import Eight from "./components/Home/Eight/Eight.jsx";
 import Nine from "./components/Home/Nine/Nine.jsx";
 import Tenth from "./components/Home/Tenth/Tenth.jsx";
-import Eleven from "./components/Home/Eleven/Eleven.jsx";
+import Eleven from "./components/Home/Footer/Footer.jsx";
 import Thirteen from "./components/Home/Thirteen/Thirteen.jsx";
+import Footer from "./components/Home/Footer/Footer.jsx";
 // import Twelve from "./components/Home/Twelve/Twelve.jsx";
 import { ToastContainer } from "react-toastify";
 
@@ -50,12 +52,14 @@ const App = () => {
                 <Third></Third> <Fourth></Fourth>
                 <Five></Five>
                 <Sixth></Sixth>
+                <PrductPage/>
                 <Seven></Seven>
                 <Eight></Eight>
                 <Nine></Nine>
                 <Tenth></Tenth>
-                <Eleven></Eleven>
-                <Thirteen></Thirteen>
+                {/* <Eleven></Eleven> */}
+               <Footer/>
+                <Thirteen/>
               </>
             }
           />

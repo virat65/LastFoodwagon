@@ -7,7 +7,7 @@ const Five = () => {
       <div className="container ">
         <div className="row gaps">
           <div className="col center my-5 ">
-            <h2>Featured Restaurants</h2>
+            <h2 className="fw-bold fs-2">Featured Restaurants</h2>
           </div>
           <div className="cardForming d-flex justify-content-center ">
            <div className="col d-flex justify-content-center  flex-column align-items-center">
@@ -140,7 +140,7 @@ const Five = () => {
                       ></path>
                     </svg>
 
-                    <span className="star">20%Off</span>
+                    <span className="star">10%Off</span>
                   </span>{" "}
                   <span
                     className="btn btnnn m-2"
@@ -172,16 +172,16 @@ const Five = () => {
                   </span>
                 </div>
                 <img
-                  src={images.foodWorld}
+                  src="https://themewagon.github.io/foodwagon/v1.0.0/assets/img/gallery/pizza-hub.png"
                   className="card-img-top radius img-fluid"
                   alt="..."
                 />
               </div>
               <div className="cardtext my-2">
-                <img src={images.foodWorldlogo} alt="" className="" />
+                <img src="https://themewagon.github.io/foodwagon/v1.0.0/assets/img/gallery/pizzahub-logo.png" alt="" className="" />
                 <div className="star mx-2 ">
                   <span>
-                    <b>Food World</b>
+                    <b>Pizza Hub</b>
                   </span>
                   <div className="detail ">
                     <svg
@@ -237,7 +237,7 @@ const Five = () => {
                       ></path>
                     </svg>
 
-                    <span className="star">20%Off</span>
+                    <span className="star">15%Off</span>
                   </span>{" "}
                   <span
                     className="btn btnnn m-2"
@@ -269,16 +269,16 @@ const Five = () => {
                   </span>
                 </div>
                 <img
-                  src={images.foodWorld}
+                  src="https://themewagon.github.io/foodwagon/v1.0.0/assets/img/gallery/donuts-hut.png"
                   className="card-img-top radius img-fluid"
                   alt="..."
                 />
               </div>
               <div className="cardtext my-2">
-                <img src={images.foodWorldlogo} alt="" />
+                <img src="https://themewagon.github.io/foodwagon/v1.0.0/assets/img/gallery/donuts-hut-logo.png" alt="" />
                 <div className="star mx-2 ">
                   <span>
-                    <b>Food World</b>
+                    <b>Donuts Hut</b>
                   </span>
                   <div className="detail ">
                     <svg
@@ -367,16 +367,16 @@ const Five = () => {
                   </span>
                 </div>
                 <img
-                  src={images.foodWorld}
+                  src="https://themewagon.github.io/foodwagon/v1.0.0/assets/img/gallery/donuthut.png"
                   className="card-img-top radius img-fluid"
                   alt="..."
                 />
               </div>
               <div className="cardtext my-2">
-                <img src={images.foodWorldlogo} alt="" className="" />
+                <img src="https://themewagon.github.io/foodwagon/v1.0.0/assets/img/gallery/donut-hut-logo.png" alt="" className="" />
                 <div className="star mx-2 ">
                   <span>
-                    <b>Food World</b>
+                    <b>Cup Cakes</b>
                   </span>
                   <div className="detail ">
                     <svg
@@ -464,16 +464,16 @@ const Five = () => {
                   </span>
                 </div>
                 <img
-                  src={images.foodWorld}
+                  src="https://themewagon.github.io/foodwagon/v1.0.0/assets/img/gallery/kuakata.png"
                   className="card-img-top radius img-fluid"
                   alt="..."
                 />
               </div>
               <div className="cardtext my-2">
-                <img src={images.foodWorldlogo} alt="" />
+                <img src="https://themewagon.github.io/foodwagon/v1.0.0/assets/img/gallery/kuakata-logo.png" alt="" />
                 <div className="star mx-2 ">
                   <span>
-                    <b>Food World</b>
+                    <b>Kuakata Fried Chicken</b>
                   </span>
                   <div className="detail ">
                     <svg
@@ -562,16 +562,16 @@ const Five = () => {
                   </span>
                 </div>
                 <img
-                  src={images.foodWorld}
+                  src="https://themewagon.github.io/foodwagon/v1.0.0/assets/img/gallery/ruby-tuesday.png"
                   className="card-img-top radius img-fluid"
                   alt="..."
                 />
               </div>
               <div className="cardtext my-2">
-                <img src={images.foodWorldlogo} alt="" className="" />
+                <img src="https://themewagon.github.io/foodwagon/v1.0.0/assets/img/gallery/ruby-tuesday-logo.png" alt="" className="" />
                 <div className="star mx-2 ">
                   <span>
-                    <b>Food World</b>
+                    <b>Ruby Tuesday</b>
                   </span>
                   <div className="detail ">
                     <svg

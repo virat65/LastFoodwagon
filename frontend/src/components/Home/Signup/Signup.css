@@ -1,19 +1,31 @@
+.signupcard {
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+.radioOption {
+  display: inline-block;
+  width: auto !important;
+  margin-right: 4px;
+  vertical-align: middle;
+}
 
 @media (max-width: 620px) {
   .signupform {
     display: flex;
-    flex-direction: column  !important;
+    flex-direction: column !important;
   }
-   .btnclass {
-    width: 40vw !important;
-    /* width: 20px; */
-    /* display: none; */
+
+  .signupcard{
+    margin-top: 120px;
+
+  }
+  .btnclass {
+    width: 40vw !important; /* width: 20px; */ /* display: none; */
   }
 }
-@media (min-width:621px) {
-   .btnclass {
-    width: 100% !important;
-    /* width: 20px; */
-    /* display: none; */
+@media (min-width: 621px) {
+  .btnclass {
+    width: 100% !important; /* width: 20px; */ /* display: none; */
   }
 }

@@ -9,7 +9,7 @@ const First = () => {
   // console.log(token,"user token");
   return (
 <div className="container mt-4">
-    <div className="home-first row row-cols-1 row-cols-lg-2 ">
+    <div className="home-first row row-cols-1 row-cols-lg-2  gap-sm-3 gap-lg-0">
       <div className="home-left  col ">
         <div className="text">
           <h1>Are your starving?</h1>

@@ -3,11 +3,17 @@ import { images } from "../../../assets/img/images";
 import "./Fourth.css";
 const Fourth = () => {
   return (
+<>
+<div className="fourth">
+
+
+<h2 className="fs-2 fw-bold">Popular Items</h2>
     <div className="items">
-      <div className="col-sm-6 col-md-4 col-xl mb-5 h-100">
+
+      <div className="col-sm-6 col-md-4 col-xl mb-2 h-100">
         <div className="card card-span h-100 rounded-3">
           <img src={images.cheeseBurger} alt="" />
-          <div className="card-body ps-0">
+          <div className="card-body ps-2">
             <h5 className="fw-bold text-1000 text-truncate mb-1">
               Cheese Burger
             </h5>
@@ -29,8 +35,8 @@ const Fourth = () => {
       <div className="col-sm-6 col-md-4 col-xl mb-5 h-100">
         <div className="card card-span h-100 rounded-3">
           <img src={images.dancake} alt="" />
-          <div className="card-body ps-0">
-            <h5 className="fw-bold text-1000 text-truncate mb-1">DankCake</h5>
+          <div className="card-body ps-2 ">
+            <h5 className="fw-bold text-1000  mb-1 ">DankCake</h5>
             <div>
               <span className="text-warning me-2">
                 <i className="fas fa-map-marker-alt"></i>{" "}
@@ -49,7 +55,7 @@ const Fourth = () => {
       <div className="col-sm-6 col-md-4 col-xl mb-5 h-100">
         <div className="card card-span h-100 rounded-3">
           <img src={images.toffesCake} alt="" />
-          <div className="card-body ps-0">
+          <div className="card-body ps-2">
             <h5 className="fw-bold text-1000 text-truncate mb-1">Toffe Cake</h5>
             <div>
               <span className="text-warning me-2">
@@ -68,7 +74,7 @@ const Fourth = () => {
       </div>  <div className="col-sm-6 col-md-4 col-xl mb-5 h-100">
         <div className="card card-span h-100 rounded-3">
           <img src={images.cheeseBurger} alt="" />
-          <div className="card-body ps-0">
+          <div className="card-body ps-2">
             <h5 className="fw-bold text-1000 text-truncate mb-1">
               Cheese Burger
             </h5>
@@ -90,7 +96,7 @@ const Fourth = () => {
       <div className="col-sm-6 col-md-4 col-xl mb-5 h-100">
         <div className="card card-span h-100 rounded-3">
           <img src={images.dancake} alt="" />
-          <div className="card-body ps-0">
+          <div className="card-body ps-2">
             <h5 className="fw-bold text-1000 text-truncate mb-1">DankCake</h5>
             <div>
               <span className="text-warning me-2">
@@ -110,7 +116,7 @@ const Fourth = () => {
       <div className="col-sm-6 col-md-4 col-xl mb-5 h-100">
         <div className="card card-span h-100 rounded-3">
           <img src={images.toffesCake} alt="" />
-          <div className="card-body ps-0">
+          <div className="card-body ps-2">
             <h5 className="fw-bold text-1000 text-truncate mb-1">Toffe Cake</h5>
             <div>
               <span className="text-warning me-2">
@@ -127,7 +133,8 @@ const Fourth = () => {
           </a>
         </div>
       </div>
-    </div>
+    </div></div>
+</>
   );
 };
 

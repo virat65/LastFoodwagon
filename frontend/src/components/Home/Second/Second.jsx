@@ -19,7 +19,7 @@ const Second = () => {
           </div>
 
           <div className="text-part">
-            <h5>flat hill slingback</h5>
+            <h5>Flat hill slingback</h5>
             <span>
               <p>6 days remaining</p>
             </span>{" "}
@@ -29,7 +29,7 @@ const Second = () => {
         <div className="img-part card-designs">
             <div className="percent-off">
               <span>
-                <h1>15</h1>
+                <h1>10</h1>
               </span>
               <div className="off">
                 <span>%</span>
@@ -39,7 +39,7 @@ const Second = () => {
           </div>
 
           <div className="text-part">
-            <h5>flat hill slingback</h5>
+            <h5>Ocean Blue Rings</h5>
             <span>
               <p>6 days remaining</p>
             </span>{" "}
@@ -58,7 +58,7 @@ const Second = () => {
             </div>
           </div>
           <div className="text-part">
-            <h5>flat hill slingback</h5>
+            <h5>Brown Leathered Wallet </h5>
             <span>
               <p>6 days remaining</p>
             </span>{" "}
@@ -68,7 +68,7 @@ const Second = () => {
         <div className="img-part card-designs">
             <div className="percent-off">
               <span>
-                <h1>15</h1>
+                <h1>10</h1>
               </span>
               <div className="off">
                 <span>%</span> <br />
@@ -78,7 +78,7 @@ const Second = () => {
           </div>
 
           <div className="text-part">
-            <h5>flat hill slingback</h5>
+            <h5>Sliverside WristWatch</h5>
             <span>
               <p>6 days remaining</p>
             </span>{" "}

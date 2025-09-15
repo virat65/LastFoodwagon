@@ -4,26 +4,26 @@ import cookie from "js-cookie";
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+
 const Navbar = () => {
   const navigate = useNavigate();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const getcookies = cookie.get("userInfo");
   const availableCookie = getcookies ? JSON.parse(getcookies) : null;
 
-  // console.log(availableCookie, "cookiiiie");
   const handleLogout = () => {
     cookie.remove("userInfo");
     setTimeout(() => {
       window.location.reload();
     }, 1000);
-    console.log("logout successfully");
-    toast.success("user Logout successfully");
+    toast.success("User logged out successfully");
   };
 
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid gap">
+          {/* Logo */}
           <div className="nav-first">
             <a
               className="navbar-brand ms-3"
@@ -31,32 +31,30 @@ const Navbar = () => {
               onClick={() => navigate("/")}
             >
               <img src={logo} alt="" className="img-fluid" />
-              <span className=" ms-3 logotext">Foodwagon</span>
+              <span className="ms-3 logotext">Foodwagon</span>
             </a>
           </div>
-          <div className="nav-second ">
-            <div className="welcomeMessage d-none d-md-block  ">
+
+          {/* Welcome + Deliver */}
+          <div className="nav-second d-flex align-items-center justify-content-between w-50">
+            <div className="welcomeMessage">
               {availableCookie
                 ? `Welcome ${availableCookie.name}`
                 : `Welcome Guest`}
             </div>
-            <div
-              className="collapse navbar-collapse"
-              id="navbarSupportedContent"
-            >
-              <p>
-                Deliver to :{" "}
-                <span>
-                  <i className="fa-solid fa-location-dot mx-1 colour w-auto"></i>
-                </span>
-                <span className="ms-2">Current Location </span>
+            <div className="deliver">
+              <p className="mb-0">
+                Deliver to:{" "}
+                <i className="fa-solid fa-location-dot mx-1 colour"></i>
+                <span className="ms-1">Current Location</span>{" "}
                 <span>Mirpur 1 Bus Stand, Dhaka</span>
               </p>
             </div>
           </div>
 
-          <div className="nav-third me-lg-5 d-flex justify-content-between ">
-            <form className="d-flex ">
+          {/* Search + Login/Profile */}
+          <div className="nav-third me-lg-5 d-flex justify-content-between">
+            <form className="d-flex">
               <input
                 className="form-control me-2"
                 type="search"
@@ -64,37 +62,30 @@ const Navbar = () => {
                 aria-label="Search"
               />
               {availableCookie ? (
-                <>
-                  <button
-                    className="btn btn-outline-success colour"
-                    href="#"
-                    type="button"
-                    onClick={() => setSidebarOpen(!sidebarOpen)}
-                  >
-                    Profile
-                  </button>
-
-                </>
+                <button
+                  className="btn btn-outline-success colour"
+                  type="button"
+                  onClick={() => setSidebarOpen(!sidebarOpen)}
+                >
+                  Profile
+                </button>
               ) : (
-                <Link aria-current="page" to={"/login"}>
-                  <button
-                    className="btn btn-outline-success colour "
-                    href=""
-                    type=""
-                  >
+                <Link to={"/login"}>
+                  <button className="btn btn-outline-success colour">
                     Login
                   </button>
                 </Link>
-
-              )}{" "}
+              )}
             </form>
           </div>
         </div>
       </nav>
+
+      {/* Sidebar */}
       {sidebarOpen && (
-        <div className="sidebar position-fixed z-1 bg-white end-0 mt-5 p-5">
+        <div className="sidebar position-fixed z-1 bg-white end-0 mt-5 p-5 top-5 border rounded">
           <div className="sidebar-content">
-            <h4> Profile</h4>
+            <h4>Profile</h4>
             <p>
               <strong>Name:</strong> {availableCookie?.name}
             </p>
@@ -102,9 +93,7 @@ const Navbar = () => {
               <strong>Email:</strong> {availableCookie?.email}
             </p>
 
-            {/* {console.log(availableCookie, "cooo")} */}
-
-            {availableCookie?.userType.includes("Admin")  && (
+            {availableCookie?.userType.includes("Admin") && (
               <>
                 <button
                   className="btn btn-primary d-block my-2"
@@ -114,25 +103,16 @@ const Navbar = () => {
                   }}
                 >
                   All Users Details
-                </button>{" "}
-                {/* <button
-                  className="btn btn-success w-100 my-2"
-                  onClick={() => {
-                    navigate("/dashboard");
-                    setSidebarOpen(false);
-                  }}
-                >
-                  Dashboard{" "}
-                </button>{" "} */}
+                </button>
                 <button
-                  className="btn btn-info  d-block my-2"
+                  className="btn btn-info d-block my-2"
                   onClick={() => {
                     navigate("/allProducts");
                     setSidebarOpen(false);
                   }}
                 >
-                  All Products Details{" "}
-                </button>{" "}
+                  All Products Details
+                </button>
                 <button
                   className="btn btn-success d-block my-2"
                   onClick={() => {
@@ -140,12 +120,13 @@ const Navbar = () => {
                     setSidebarOpen(false);
                   }}
                 >
-                  Add Prdouct{" "}
+                  Add Product
                 </button>
               </>
             )}
+
             <button
-              className="btn btn-warning  d-block my-2"
+              className="btn btn-warning d-block my-2"
               onClick={() => {
                 navigate("/productPage");
                 setSidebarOpen(false);
@@ -154,11 +135,12 @@ const Navbar = () => {
               Product Page
             </button>
 
-              <Link to={"/cart"}>
-                    <button> CartPAge</button>
-                  </Link>
+            <Link to={"/cart"} className="no-underline">
+              <button className="btn btn-secondary d-block my-2">Cart Page</button>
+            </Link>
+
             <button
-              className="btn btn-danger  d-block my-2"
+              className="btn btn-danger d-block my-2"
               onClick={() => {
                 handleLogout();
                 navigate("/");
@@ -168,7 +150,7 @@ const Navbar = () => {
             </button>
 
             <button
-              className="btn btn-secondary  d-block my-2"
+              className="btn btn-secondary d-block my-2"
               onClick={() => setSidebarOpen(false)}
             >
               Close

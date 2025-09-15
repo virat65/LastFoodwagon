@@ -69,7 +69,7 @@ const CartPage = () => {
 
   return (
     <div>
-      <section className="py-5" style={{ background: "#F9F3EC", minHeight: "100vh" }}>
+      <section className="py-5 mt-2" style={{ background: "#F9F3EC", minHeight: "100vh" }}>
         <div className="container">
           <h1 className="display-4 fw-bold mb-4 text-center">Shopping Cart</h1>
           <div className="table-responsive mb-5">

@@ -1,27 +1,26 @@
 import React from "react";
 import "./Sixth.css";
 import { menu_list } from "../../../assets/img/images";
-const ExploreMenu = ({ category, setCategory }) => {
-  return (
-    <div className="  explore-menu" id="explore-menu">
-      <h1>Search By Food</h1>
 
-      <div className="explore-menu-list">
+const ExploreMenu = ({ category }) => {
+  return (
+    <div className="explore-menu" id="explore-menu">
+      <h1>🍴 Search By Food</h1>
+      <p className="explore-menu-text">
+        Choose from a wide variety of cuisines and dishes to satisfy your
+        cravings!
+      </p>
+
+      <div className="explore-menu-list d-flex justify-content-evenly pt-2 ">
         {menu_list.map((item, index) => {
           return (
-            <div
-              onClick={() =>
-                setCategory((previous) =>
-                  previous === item.menu_name ? "All" : item.menu_name
-                )
-              }
-              key={index}
-              className="explore-menu-list-item"
-            >
+            <div key={index} className="explore-menu-list-item">
               <img
-                className={`${category === item.menu_name ? "active" : ""} img-fluid` }
+                className={`${
+                  category === item.menu_name ? "active" : ""
+                } img-fluid rounded-circle`}
                 src={item.menu_img}
-                alt=""
+                alt={item.menu_name}
               />
               <p>{item.menu_name}</p>
             </div>

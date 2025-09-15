@@ -1,5 +1,4 @@
 import axios from "axios";
-import React from "react";
 import { useState } from "react";
 import API from "../../Product/backendrouting";
 import { toast } from "react-toastify";
@@ -68,9 +67,9 @@ const Singup = () => {
     <div className="container-fluid min-vh-100 d-flex justify-content-center align-items-center">
       <div className="row w-100">
         <div className="col-12 col-sm-10 col-md-6 col-lg-4 mx-auto">
-          <div className="card p-4 shadow">
-            <h2 className="text-center mb-4">Signup</h2>
-            <form onSubmit={handleSubmit} className="signupform mt-5">
+          <div className="card signupcard p-4 shadow">
+            <h2 className="text-center mb-1">Signup</h2>
+            <form onSubmit={handleSubmit} className="signupform mt-1">
               <div className="mb-3">
                 <label className="form-label d-block">Your Name</label>
                 <input
@@ -116,7 +115,7 @@ const Singup = () => {
                     type="radio"
                     name="userType"
                     value="user"
-                    className="me-1"
+                    className="radioOption me-1"
                   />
                   <label className="me-3">User</label>
 
@@ -125,7 +124,7 @@ const Singup = () => {
                     type="radio"
                     name="userType"
                     value="Admin"
-                    className="me-1"
+                   className="radioOption me-1"
                   />
                   <label>Admin</label>
                 </div>

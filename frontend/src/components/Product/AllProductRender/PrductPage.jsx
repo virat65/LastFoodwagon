@@ -5,7 +5,13 @@ import cookie from "js-cookie";
 import productRouting from "../productRouting.js";
 import cartapi from "../cartRouting.js";
 import { toast } from "react-toastify";
+import { useLocation } from "react-router-dom";
+import "./ProductPage.css"
 const PrductPage = () => {
+  const location = useLocation();
+  // Check if we're on the home page
+  const isHomePage = location.pathname === "/";
+
   const [allProducts, setAllProducts] = useState([]);
   const getCookie = cookie.get("userInfo");
   // console.log(getCookie, "getcookie");
@@ -24,8 +30,8 @@ const PrductPage = () => {
       const cartitem = await axios.post(
         cartapi.addcart.url,
         {
-          productId: productidd,  //key is the same as per the key used in cardModel
-          userId:tokenGen._id //key is the same as per the key used in cardModel
+          productId: productidd, //key is the same as per the key used in cardModel
+          userId: tokenGen._id, //key is the same as per the key used in cardModel
         },
         {
           headers: {
@@ -33,11 +39,9 @@ const PrductPage = () => {
           },
         }
       );
-      if(cartitem.data.status===200){
-
+      if (cartitem.data.status === 200) {
         toast.success(cartitem.data.message);
-      }
-      else{
+      } else {
         toast.error(cartitem.data.message);
       }
       console.log(cartitem, "cartitem");
@@ -50,50 +54,59 @@ const PrductPage = () => {
   }, []);
   return (
     <>
-      <div className="mt-5 pt-5">
-        <div className="container">
-          <div className="row gap-1 justify-content-evenly w-100">
-            {allProducts.map((e, index) => (
-              <>
-                {/* {  console.log(e.name)};
+      <div
+        style={{
+          marginTop: isHomePage ? 0 : "50px",
+          paddingTop: isHomePage ? 0 : "50px",
+        }}
+      >
+        <div >
+          <div className="container">
+            <h2 className="fs-2 fw-bold">Products</h2>
+            <div className="row gap-1 justify-content-evenly w-100">
+              {allProducts.map((e, index) => (
+                <>
+                  {/* {  console.log(e.name)};
 
 <img src={e.picture} alt="" />
 <h1>name = {e.name}</h1>
 <h1>price = {e.price}</h1>
 {console.log(`${e.picture}`)} */}
 
-                <div class="card mb-3 col-lg-5 col-11 p-2" key={index + 1}>
-                  <p>{index + 1}</p>
-                  <div class="row g-0 ">
-                    <div class="col-md-4">
-                      <img
-                        src={e.picture}
-                        alt="..."
-                        className="w-100 img-fluid  rounded-0"
-                      />
-                      {/* {console.log(e.picture, "picture url")} */}
-                    </div>
-                    <div class="col-md-8">
-                      <div class="card-body ">
-                        <h5 class="card-title">{e.name}</h5>
-                        <p class="card-text">{e.category}</p>
-                         <p class="card-textn fw-bold"> ₹{e.price}</p>
-                        <p class="card-text">
-                          <small class="text-body-secondary">
-                            {e.description}
-                          </small>
-                        </p>
-                        <button onClick={() => addtocartitem(e._id)}>
-                          Add to Cart
-                        </button>
+                  <div class="card mb-3 col-lg-5 col-11 p-2" key={index + 1}>
+                    {/* <p>{index + 1}</p> */}
+                    <div class="row g-0 ">
+                      <div class="col-md-4 ">
+                        <img
+                          src={e.picture}
+                          alt="..."
+                          className="w-100 img-fluid  rounded-0"
+                        />
+
+                          <p class="card-text">{e.category}</p>
+                          <p class="card-textn fw-bold"> ₹{e.price}</p>
+                        {/* {console.log(e.picture, "picture url")} */}
                       </div>
+                      <div class="col-md-8 ps-2 d-flex flex-column " >
+  <h5 class="card-title mt-2">{e.name}</h5>
+
+                          <p class="card-text fst-normal">
+                            <small class="text-body-secondary">
+                              {e.description}
+                            </small>
+                          </p>
+                           <button onClick={() => addtocartitem(e._id)} style={{background:"#ff6000"}}>
+                            Add to Cart
+                          </button>
+</div>
+
                     </div>
                   </div>
-                </div>
-              </>
-            ))}
+                </>
+              ))}
+            </div>
           </div>
-        </div>
+        </div>{" "}
       </div>
     </>
   );

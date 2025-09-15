@@ -1,22 +1,62 @@
-.foot{
-  justify-content: space-between;
-
-}
-
-.thirteen{
-
-  justify-content: space-between;
+.thirteen {
+  display: flex;
   flex-direction: column;
   gap: 20px;
-  background-color:#212121;
+  background-color: #212121;
   width: 100%;
   color: white;
-  padding: 0px 30px;
-
+  padding: 20px 30px;
 }
 
-.icons{
-
+.icons {
+  display: flex;
   flex-direction: row;
   gap: 15px;
+  font-size: 1.5rem;
+}
+
+.icons i {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.icons i:hover {
+  color: rgb(242, 114, 41); /* orange hover */
+}
+
+.lower {
+  display: flex;
+  align-items: center;
+}
+
+.lower input {
+  width: 250px;
+  height: 40px;
+  padding-left: 35px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+.lower button {
+  height: 40px;
+  width: 100px;
+  background-color: rgb(242, 114, 41);
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+  transition: 0.3s;
+}
+
+.lower button:hover {
+  background-color: #e05a1c;
+}
+
+.foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #bbb;
 }
