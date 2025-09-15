@@ -12,6 +12,8 @@
 
 .third  .card {
   padding: 20px 0px;
+  display: flex;
+  flex-direction: column !important;
 }
 .third  .text {
   width: 100%;
