@@ -35,12 +35,12 @@ const Login = () => {
   };
 
   return (
-    <div className="container-fluid d-flex justify-content-center align-items-center min-vh-100 mt-4">
+    <div className="container-fluid d-flex justify-content-center align-items-center min-vh-100   mt-4">
       <div className="col-12 col-sm-10 col-md-6 col-lg-4">
         <div className="login-card p-4 shadow rounded">
           <h2 className="text-center mt-4">Login</h2>
 
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="login-form">
             {/* Email / Phone */}
             <div className="mb-3">
               <label htmlFor="email" className="form-label">
@@ -51,7 +51,7 @@ const Login = () => {
                 name="email"
                 value={data.email}
                 onChange={handleChange}
-                className="form-control"
+                className="form-control d-block"
                 placeholder="Enter email or phone number"
                 required
               />
@@ -67,19 +67,19 @@ const Login = () => {
                 name="password"
                 value={data.password}
                 onChange={handleChange}
-                className="form-control"
+                className="form-control  d-block"
                 placeholder="Enter your password"
                 required
               />
             </div>
 
-            <button type="submit" className="btn btn-primary w-100">
+            <button type="submit" className="btn btn-primary w-100 login-button">
               Login
             </button>
           </form>
 
           <p className="text-center mt-3">
-            Don’t have an account? <a href="/sign">Sign Up</a>
+            Don't have an account? <a href="/sign">Sign Up</a>
           </p>
         </div>
       </div>
