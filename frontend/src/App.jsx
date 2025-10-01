@@ -35,6 +35,7 @@ import DeleteProduct from "./components/Product/DeleteProduct/DeleteProduct.jsx"
 
 import PrductPage from "./components/Product/AllProductRender/PrductPage.jsx";
 import CartPage from "./components/cartPage/CartPage.jsx";
+import VerifyEmail from "./components/Home/VerifyEmail.jsx";
 
 const App = () => {
   return (
@@ -63,6 +64,7 @@ const App = () => {
               </>
             }
           />
+          <Route path="/verifyemail" element = {<VerifyEmail/>}/>
           <Route path="/login" element={<Login />} />{" "}
           <Route path="/sign" element={<Singup />} />
           <Route path="/usertable" element={<UserTable />} />

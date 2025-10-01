@@ -1,8 +1,9 @@
 import express from "express"
-import { deleteAll, deleteuser, findAll, findbybody, findByid, login, signup, updateuser } from "../controller/userController.js"
+import { deleteAll, deleteuser, findAll, findbybody, findByid, login, signup, updateuser, verifyEmail } from "../controller/userController.js"
 import usermiddleware from "../middleware/usermiddleware.js"
 const userRouter = express.Router()
 userRouter.post("/sign",signup)
+userRouter.post("/verifyemail",verifyEmail)
 userRouter.post("/login",login)
 userRouter.get("/findAll",usermiddleware,findAll)
 userRouter.post("/findbyid/:id",findByid)

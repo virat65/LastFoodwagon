@@ -9,6 +9,10 @@ const schema = mongoose.Schema(
     phone: { type: String, default: "" },
     token: { type: String, default: "" },
     userType: [{ type: String, enum: ["user", "Admin"], default: "user" }],
+    isverified:{type:Boolean,default:false},
+    verificationCode:{type:String,default:""},
+    verificationCodeExpiresAt:Date
+
 
     // cart: [{ type: mongoose.Schema.Types.ObjectId, ref: "cartmodel" }],
   },

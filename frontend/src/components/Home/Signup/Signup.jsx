@@ -20,12 +20,14 @@ const Singup = () => {
     if (name === "image") {
       setData({ ...data, [name]: files[0] });
     } else {
+      console.log(e.target.value)
       setData({ ...data, [name]: value });
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("hi")
     if (
       data?.userType === "Admin" &&
       data.secreatekey != import.meta.env.VITE_adminkey
@@ -53,7 +55,7 @@ const Singup = () => {
         console.log(formData, "formData");
         if (formData.data.status == 200) {
           toast.success(formData.data.message);
-          navigate("/login");
+          navigate("/verifyemail");
         } else {
           toast.error(formData.data.message);
         }

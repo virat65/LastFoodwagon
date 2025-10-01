@@ -1,8 +1,9 @@
 import imageUpload from "../helper/imageUploading.js";
+import { sendVerificationCode, sendWelcomeEmail } from "../middleware/Email.js";
 import userModel from "../model/userModel.js";
 import tokenGen from "../tokenGen/tokenGen.js";
 import bcrypt from "bcrypt";
-imageUpload;
+
 export const signup = async (req, res) => {
   try {
     console.log(req.body);
@@ -38,6 +39,11 @@ export const signup = async (req, res) => {
         });
       } else {
         const passwordEncrypt = await bcrypt.hash(req.body.password, 10);
+        const opt = Math.floor(100000 + Math.random()* 900000).toString()
+        console.log(opt,"Verification code")
+        const expiryTime = new Date(Date.now() + 5 * 60 * 1000); // 5 minutes
+        console.log(expiryTime,"ExpiryTime")
+
         if (req.files?.image?.name) {
           const photo = req.files.image;
           console.log(photo, "photoooooooo");
@@ -51,12 +57,15 @@ export const signup = async (req, res) => {
           ...req.body,
           password: passwordEncrypt,
           image: req.body.image,
+          verificationCode:opt,
+          verficationCodeExpiresAt:expiryTime
         });
         console.log(user, "userrrr");
         const tokenCall = await tokenGen(user._id);
         user.token = tokenCall.createToken;
         user.logintime = tokenCall.decodeToken.iat;
         user.save();
+        sendVerificationCode(user.email,opt) //sending verification otp
         console.log(req.files, "filesssssss");
 
         return res.json({
@@ -71,6 +80,32 @@ export const signup = async (req, res) => {
     console.log(error, "error in signup");
   }
 };
+export const verifyEmail = async(req,res)=>{
+  try {
+    const {otpCode} = req.body //send by the user to verify his account
+    const user = await userModel.findOne({verificationCode:otpCode})
+if(!user){
+  return res.json({success:false,message:"Inavlid or Epired OTP"})
+}
+ if (user.verficationCodeExpiresAt < new Date()) {
+      return res.status(400).json({ sucess: false, message: "OTP Expired" });
+    }
+else{
+  user.isverified= true
+ user.verificationCode= undefined
+ await user.save()
+ await sendWelcomeEmail(user.email,user.name)
+ return res.json({
+  success:true,
+  status:200,
+  message:"Account Verified successfully"
+ })
+}
+  } catch (error) {
+console.log(error,"Error in verifyEmail")
+ return res.json({success:false,message:"Internal server Error"})
+  }
+}
 export const login = async (req, res) => {
   try {
     const emailFind = req.body?.email?.trim();

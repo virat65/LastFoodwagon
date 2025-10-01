@@ -35,7 +35,7 @@ const Navbar = () => {
             </a>
           </div>
 
-          {/* Welcome + Deliver */}
+          {/* Welcome code  */}
           <div className="nav-second d-flex align-items-center justify-content-between w-50">
             <div className="welcomeMessage">
               {availableCookie
