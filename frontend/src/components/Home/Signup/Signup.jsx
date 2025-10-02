@@ -71,7 +71,7 @@ const Singup = () => {
     <div className="container-fluid min-vh-100 d-flex justify-content-center align-items-center">
       <div className="row w-100">
         <div className="col-12 col-sm-10 col-md-6 col-lg-4 mx-auto">
-          <div className="card signupcard p-4 shadow">
+          <div className="card signupcard p-4 shadow d-flex flex-column">
             <h2 className="text-center mb-1">Signup</h2>
             <form onSubmit={handleSubmit} className="signupform mt-1">
               <div className="mb-3">

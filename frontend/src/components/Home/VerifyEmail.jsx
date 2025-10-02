@@ -22,12 +22,12 @@ const navigate = useNavigate()
       console.log("first")
       const res = await axios.post(API.verifyemail.url, { otpCode: otp });
       console.log(res,"Res")
-      navigate("/login")
+
 
       // Show toast from backend message (success or fail)
       if (res.data.success) {
         toast.success(res.data.message);
-
+ navigate("/login")
       } else {
         toast.error(res.data.message);
       }
