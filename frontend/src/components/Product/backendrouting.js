@@ -1,25 +1,26 @@
-const backendUrl =import.meta.env.VITE_BACKENDURL;
-console.log(backendUrl,"backendurl")
+const backendUrl = import.meta.env.VITE_BACKENDURL;
+console.log(backendUrl, "backendurl");
 const API = {
   signup: {
     method: "post",
     url: `${backendUrl}/user/sign`,
   },
+  verifyemail: { method: "post", url: `${backendUrl}/user/verifyemail` },
   login: {
     url: `${backendUrl}/user/login`,
     method: "post",
   },
-    findAll: {
+  findAll: {
     url: `${backendUrl}/user/findAll`,
     method: "get",
   },
-  finduserbyid :{
-    url:`${backendUrl}/user/findbyid`,
-    method:"post"
+  finduserbyid: {
+    url: `${backendUrl}/user/findbyid`,
+    method: "post",
   },
-  deleteuser :{
-    url:`${backendUrl}/user/delete`,
-    method:"delete"
-  }
+  deleteuser: {
+    url: `${backendUrl}/user/delete`,
+    method: "delete",
+  },
 };
 export default API;

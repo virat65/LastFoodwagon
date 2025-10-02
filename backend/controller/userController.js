@@ -87,9 +87,7 @@ export const verifyEmail = async(req,res)=>{
 if(!user){
   return res.json({success:false,message:"Inavlid or Epired OTP"})
 }
- if (user.verficationCodeExpiresAt < new Date()) {
-      return res.status(400).json({ sucess: false, message: "OTP Expired" });
-    }
+
 else{
   user.isverified= true
  user.verificationCode= undefined

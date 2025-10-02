@@ -54,8 +54,10 @@ const Singup = () => {
         const formData = await axios.post(API.signup.url, dataaaa);
         console.log(formData, "formData");
         if (formData.data.status == 200) {
+          console.log("sucess in signup")
           toast.success(formData.data.message);
           navigate("/verifyemail");
+
         } else {
           toast.error(formData.data.message);
         }
