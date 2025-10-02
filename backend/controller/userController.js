@@ -96,12 +96,13 @@ else{
  return res.json({
   success:true,
   status:200,
-  message:"Account Verified successfully"
+  message:"Account Verified successfully",
+  body:user
  })
 }
   } catch (error) {
 console.log(error,"Error in verifyEmail")
- return res.json({success:false,message:"Internal server Error"})
+ return res.json({success:false,message:"Internal server Error",body:user})
   }
 }
 export const login = async (req, res) => {

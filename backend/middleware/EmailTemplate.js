@@ -62,7 +62,7 @@ export const Verification_Email_Template = `
   </head>
   <body>
       <div class="container">
-      <h2>Kaisa Hai kaluu </h2>
+     
           <div class="header">Verify Your Email</div>
           <div class="content">
               <p>Hello,</p>
