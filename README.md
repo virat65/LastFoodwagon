@@ -8,7 +8,7 @@ The frontend is built with **React.js** using reusable components, while the bac
 --- 
 
 ## 🚀 Live Demo
-🔗 [Foodwagon Website](https://lastfoodwagon-frontend2.onrender.com)
+🔗 [Foodwagon Website](https://lastfoodwagon-frontend-tqo1.onrender.com/)
 
 ---
 
