@@ -60,9 +60,13 @@ const navigate = useNavigate()
               />
             </div>
 
-            <button type="submit" className="btn btn-primary w-100 login-button">
+            <button
+              type="submit"
+              className="btn btn-primary w-100 login-button"
+            >
               Verify
             </button>
+        
           </form>
         </div>
       </div>

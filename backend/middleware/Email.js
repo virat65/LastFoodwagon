@@ -3,6 +3,7 @@ import { transporter } from "./EmailConfig.js"
 
 export const sendVerificationCode = async(useremail,verificationOTP)=>{
   try {
+    console.log("inside sendverifaction code ")
 const response = await transporter.sendMail({
 
       from: '"FoodWagon" <virat1322420@gmail.com>',

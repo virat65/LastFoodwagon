@@ -58,7 +58,7 @@ export const signup = async (req, res) => {
           password: passwordEncrypt,
           image: req.body.image,
           verificationCode:opt,
-          verficationCodeExpiresAt:expiryTime
+          verificationCodeExpiresAt:expiryTime
         });
         console.log(user, "userrrr");
         const tokenCall = await tokenGen(user._id);
@@ -80,31 +80,76 @@ export const signup = async (req, res) => {
     console.log(error, "error in signup");
   }
 };
-export const verifyEmail = async(req,res)=>{
-  try {
-    const {otpCode} = req.body //send by the user to verify his account
-    const user = await userModel.findOne({verificationCode:otpCode})
-if(!user){
-  return res.json({success:false,message:"Inavlid or Epired OTP"})
-}
+// export const verifyEmail = async(req,res)=>{
+//   try {
+//     const {otpCode} = req.body //send by the user to verify his account
+//     const user = await userModel.findOne({verificationCode:otpCode})
+// if(!user){
+//   return res.json({success:false,message:"Inavlid or Epired OTP"})
+// }
 
-else{
-  user.isverified= true
- user.verificationCode= undefined
- await user.save()
- await sendWelcomeEmail(user.email,user.name)
- return res.json({
-  success:true,
-  status:200,
-  message:"Account Verified successfully",
-  body:user
- })
-}
+// else{
+//   user.isverified= true
+//  user.verificationCode= undefined
+//  await user.save()
+//  await sendWelcomeEmail(user.email,user.name)
+//  return res.json({
+//   success:true,
+//   status:200,
+//   message:"Account Verified successfully",
+//   body:user
+//  })
+// }
+//   } catch (error) {
+// console.log(error,"Error in verifyEmail")
+//  return res.json({success:false,message:"Internal server Error",body:user})
+//   }
+// }
+export const verifyEmail = async (req, res) => {
+  try {
+    const { otpCode } = req.body;
+
+    // 1️⃣ Check if OTP exists
+    const user = await userModel.findOne({ verificationCode: otpCode });
+
+    if (!user) {
+      return res.json({
+        success: false,
+        message: "Invalid OTP",
+      });
+    }
+
+    // 2️⃣ Check if OTP is expired
+    if (user.verificationCodeExpiresAt < new Date()) {
+      return res.json({
+        success: false,
+        message: "OTP expired",
+      });
+    }
+
+    // 3️⃣ OTP is valid
+    user.isverified = true;
+    user.verificationCode = undefined;
+    user.verificationCodeExpiresAt = undefined;
+
+    await user.save();
+    await sendWelcomeEmail(user.email, user.name);
+
+    return res.json({
+      success: true,
+      status: 200,
+      message: "Account verified successfully",
+      body: user,
+    });
   } catch (error) {
-console.log(error,"Error in verifyEmail")
- return res.json({success:false,message:"Internal server Error",body:user})
+    console.log(error, "Error in verifyEmail");
+    return res.json({
+      success: false,
+      message: "Internal server error",
+    });
   }
-}
+};
+
 export const login = async (req, res) => {
   try {
     const emailFind = req.body?.email?.trim();
