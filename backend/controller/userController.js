@@ -48,7 +48,7 @@ export const signup = async (req, res) => {
           const photo = req.files.image;
           console.log(photo, "photoooooooo");
           if (photo) {
-            req.body.image = imageUpload(photo);
+            req.body.image =await imageUpload(photo);
             console.log(req.body.image, "request.body.image");
           }
         }
