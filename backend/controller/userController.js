@@ -65,7 +65,7 @@ export const signup = async (req, res) => {
         user.token = tokenCall.createToken;
         user.logintime = tokenCall.decodeToken.iat;
         user.save();
-        sendVerificationCode(user.email,opt) //sending verification otp
+      await  sendVerificationCode(user.email,opt) //sending verification otp
         console.log(req.files, "filesssssss");
 
         return res.json({
