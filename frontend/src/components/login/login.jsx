@@ -9,6 +9,7 @@ import "./Login.css";
 const Login = () => {
   const navigate = useNavigate();
   const [data, setData] = useState({ email: "", password: "" });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
@@ -16,6 +17,7 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     try {
       const res = await axios.post(API.login.url, data);
@@ -31,6 +33,8 @@ const Login = () => {
     } catch (error) {
       toast.error("Login failed. Please try again.");
       console.error("Error in handleSubmit:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -73,8 +77,23 @@ const Login = () => {
               />
             </div>
 
-            <button type="submit" className="btn btn-primary w-100 login-button">
-              Login
+            <button
+              type="submit"
+              className="btn btn-primary w-100 login-button"
+              disabled={loading}
+            >
+              {loading ? (
+                <>
+                  <span
+                    className="spinner-border spinner-border-sm me-2"
+                    role="status"
+                    aria-hidden="true"
+                  ></span>
+                  Logging in...
+                </>
+              ) : (
+                "Login"
+              )}
             </button>
           </form>
 

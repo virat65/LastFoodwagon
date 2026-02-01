@@ -4,36 +4,37 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
-
-
-
 const VerifyEmail = () => {
   const [otp, setOtp] = useState("");
-const navigate = useNavigate()
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     setOtp(e.target.value);
-    console.log(e.target.value)
+    console.log(e.target.value);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     try {
-      console.log("first")
+      console.log("first");
       const res = await axios.post(API.verifyemail.url, { otpCode: otp });
-      console.log(res,"Res")
-
+      console.log(res, "Res");
 
       // Show toast from backend message (success or fail)
       if (res.data.success) {
         toast.success(res.data.message);
- navigate("/login")
+        navigate("/login");
       } else {
         toast.error(res.data.message);
       }
     } catch (error) {
       toast.error("Something went wrong. Please try again.");
       console.error("Error in verify email:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -63,10 +64,21 @@ const navigate = useNavigate()
             <button
               type="submit"
               className="btn btn-primary w-100 login-button"
+              disabled={loading}
             >
-              Verify
+              {loading ? (
+                <>
+                  <span
+                    className="spinner-border spinner-border-sm me-2"
+                    role="status"
+                    aria-hidden="true"
+                  ></span>
+                  Verifying...
+                </>
+              ) : (
+                "Verify"
+              )}
             </button>
-        
           </form>
         </div>
       </div>

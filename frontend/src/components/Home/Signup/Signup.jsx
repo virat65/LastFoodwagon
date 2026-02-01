@@ -14,25 +14,29 @@ const Singup = () => {
     userType: "",
     secreatekey: "",
   });
+  const [loading, setLoading] = useState(false);
+
   const handleChange = (e) => {
     const { name, value, files } = e.target;
     console.log(files);
     if (name === "image") {
       setData({ ...data, [name]: files[0] });
     } else {
-      console.log(e.target.value)
+      console.log(e.target.value);
       setData({ ...data, [name]: value });
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("hi")
+    console.log("hi");
+    setLoading(true);
     if (
       data?.userType === "Admin" &&
       data.secreatekey != import.meta.env.VITE_adminkey
     ) {
       toast.error("Invalid Amin");
+      setLoading(false);
     } else {
       try {
         const dataaaa = new FormData();
@@ -54,16 +58,17 @@ const Singup = () => {
         const formData = await axios.post(API.signup.url, dataaaa);
         console.log(formData, "formData");
         if (formData.data.status == 200) {
-          console.log("sucess in signup")
+          console.log("sucess in signup");
           toast.success(formData.data.message);
           navigate("/verifyemail");
-
         } else {
           toast.error(formData.data.message);
         }
       } catch (error) {
         console.log(error);
         toast.error(error);
+      } finally {
+        setLoading(false);
       }
     }
   };
@@ -128,7 +133,7 @@ const Singup = () => {
                     type="radio"
                     name="userType"
                     value="Admin"
-                   className="radioOption me-1"
+                    className="radioOption me-1"
                   />
                   <label>Admin</label>
                 </div>
@@ -156,8 +161,23 @@ const Singup = () => {
                 />
               </div>
 
-              <button type="submit" className="btn btn-primary btnclass w-100">
-                Sign Up
+              <button
+                type="submit"
+                className="btn btn-primary btnclass w-100"
+                disabled={loading}
+              >
+                {loading ? (
+                  <>
+                    <span
+                      className="spinner-border spinner-border-sm me-2"
+                      role="status"
+                      aria-hidden="true"
+                    ></span>
+                    Signing up...
+                  </>
+                ) : (
+                  "Sign Up"
+                )}
               </button>
             </form>
 

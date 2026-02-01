@@ -39,16 +39,16 @@ export const signup = async (req, res) => {
         });
       } else {
         const passwordEncrypt = await bcrypt.hash(req.body.password, 10);
-        const opt = Math.floor(100000 + Math.random()* 900000).toString()
-        console.log(opt,"Verification code")
+        const opt = Math.floor(100000 + Math.random() * 900000).toString();
+        console.log(opt, "Verification code");
         const expiryTime = new Date(Date.now() + 5 * 60 * 1000); // 5 minutes
-        console.log(expiryTime,"ExpiryTime")
+        console.log(expiryTime, "ExpiryTime");
 
         if (req.files?.image?.name) {
           const photo = req.files.image;
           console.log(photo, "photoooooooo");
           if (photo) {
-            req.body.image =await imageUpload(photo);
+            req.body.image = await imageUpload(photo);
             console.log(req.body.image, "request.body.image");
           }
         }
@@ -57,19 +57,34 @@ export const signup = async (req, res) => {
           ...req.body,
           password: passwordEncrypt,
           image: req.body.image,
-          verificationCode:opt,
-          verificationCodeExpiresAt:expiryTime
+          verificationCode: opt,
+          verificationCodeExpiresAt: expiryTime,
         });
         console.log(user, "userrrr");
         const tokenCall = await tokenGen(user._id);
         user.token = tokenCall.createToken;
         user.logintime = tokenCall.decodeToken.iat;
-        user.save();
-      await  sendVerificationCode(user.email,opt) //sending verification otp
-        console.log(req.files, "filesssssss");
+        await user.save();
+
+        // Send verification email with error handling
+        try {
+          await sendVerificationCode(user.email, opt);
+          console.log("Verification email sent successfully");
+        } catch (emailError) {
+          console.log("Email sending error:", emailError.message);
+          // Still return success since user is created, but log the email error
+          return res.json({
+            message:
+              "user created but verification email failed to send. Please try again.",
+            status: 200,
+            success: false,
+            body: user,
+            emailError: emailError.message,
+          });
+        }
 
         return res.json({
-          message: "user created",
+          message: "user created successfully. Verification email sent.",
           status: 200,
           success: true,
           body: user,
@@ -78,6 +93,12 @@ export const signup = async (req, res) => {
     }
   } catch (error) {
     console.log(error, "error in signup");
+    return res.json({
+      message: "Error creating user",
+      status: 500,
+      success: false,
+      error: error.message,
+    });
   }
 };
 // export const verifyEmail = async(req,res)=>{
@@ -184,7 +205,7 @@ export const login = async (req, res) => {
       } else {
         const passwordMatch = await bcrypt.compare(
           req.body.password,
-          user.password
+          user.password,
         );
         if (!passwordMatch) {
           return res.json({
@@ -298,7 +319,7 @@ export const updateuser = async (req, res) => {
     const user = await userModel.findByIdAndUpdate(
       { _id: req.params.id },
       { ...req.body, password: decryptPassword },
-      { new: true }
+      { new: true },
     );
 
     if (!user) {
